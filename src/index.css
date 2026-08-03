@@ -1,111 +1,132 @@
+@import 'tailwindcss';
+
+/* Fuente display local — Agatha Pricilla (OTF, peso 400/Regular, elegida por el
+   propietario). Reemplaza el placeholder webfont del token --font-display.
+   La sans (--font-sans) se mantiene como stack del sistema hasta que el
+   propietario provea la webfont autorizada (DESING_SYSTEM.md §4.3). */
+@font-face {
+  font-family: 'Agatha Pricilla';
+  src: url('./assets/FUENTE/agatha-pricilla.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  --container-content: 80rem;
+  --container-wide: 87.5rem;
+}
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+@theme {
+  /* Paleta — Mandioca, Turismo de Naturaleza.
+     IMPORTANTE: valores PROVISIONALES. Los HEX oficiales del Manual de Marca
+     figuran como [MEDIDO] en DESIGN_SYSTEM.md (sección 3) y están PENDIENTES de
+     confirmación definitiva. Al confirmarse, actualizar únicamente estos tokens:
+     los componentes consumen colores por nombre de token, sin valores duplicados. */
+  --color-primary: #eb9723;
+  --color-earth: #b57223;
+  --color-deep-earth: #4a310e;
+  --color-nature: #85ba3a;
+  --color-water: #1d5b8a;
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* Neutros */
+  --color-warm-white: #faf8f3;
+  --color-light-warm: #f2f0ea;
+  --color-ink: #2b261f;
 
-  @media (max-width: 1024px) {
-    font-size: 16px;
+  /* Canal WhatsApp: color de marca del canal (NO forma parte de la paleta
+     Mandioca). Se usa solo en el botón flotante de conversión. */
+  --color-whatsapp: #25d366;
+
+  /* Tipografía: display editorial + sans moderna */
+  /* Display: fuente local Agatha Pricilla (elegida por el propietario).
+     Sans: reemplazar por webfont autorizada cuando el propietario la provea. */
+  --font-display:
+    'Agatha Pricilla', 'Fraunces', 'Iowan Old Style', 'Palatino Linotype',
+    Palatino, Georgia, 'Times New Roman', serif;
+  --font-sans:
+    'Inter', 'Avenir Next', 'Segoe UI', system-ui, -apple-system,
+    sans-serif;
+
+  /* Escala tipográfica */
+  --text-display: clamp(2.75rem, 7vw, 5rem);
+  --text-display--line-height: 1.02;
+  --text-display--letter-spacing: -0.02em;
+
+  --text-h1: clamp(2.5rem, 5vw, 3.75rem);
+  --text-h1--line-height: 1.05;
+  --text-h1--letter-spacing: -0.015em;
+
+  --text-h2: clamp(2rem, 4vw, 3rem);
+  --text-h2--line-height: 1.1;
+  --text-h2--letter-spacing: -0.01em;
+
+  --text-h3: clamp(1.375rem, 2vw, 2rem);
+  --text-h3--line-height: 1.25;
+
+  --text-body-lg: 1.25rem;
+  --text-body-lg--line-height: 1.6;
+
+  --text-body: 1rem;
+  --text-body--line-height: 1.6;
+
+  /* Formas */
+  --radius-card: 1rem;
+
+  /* Sombras suaves (color derivado del token --color-deep-earth) */
+  --shadow-soft:
+    0 1px 2px color-mix(in srgb, var(--color-deep-earth) 4%, transparent),
+    0 8px 24px color-mix(in srgb, var(--color-deep-earth) 6%, transparent);
+
+  /* Ticker de actividades (marquee sutil, respeta prefers-reduced-motion) */
+  --animate-marquee: marquee 40s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
   }
 
-  #social .button-icon {
-    filter: invert(1) brightness(2);
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
   }
-}
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-}
-
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
-}
-
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
+  body {
+    @apply bg-warm-white font-sans text-ink antialiased;
+    font-size: 1rem;
+    line-height: 1.6;
   }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
+
+  ::selection {
+    @apply bg-primary/25 text-deep-earth;
   }
-}
-p {
-  margin: 0;
-}
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
-}
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
+    outline-style: solid;
+  }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-deep-earth;
+    text-wrap: balance;
+  }
+
+  img {
+    @apply max-w-full;
+  }
 }

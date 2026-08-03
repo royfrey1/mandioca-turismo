@@ -1,0 +1,758 @@
+# DESIGN SYSTEM — MANDIOCA
+
+## Turismo de Naturaleza
+
+Versión: 2.0
+
+Este documento define el sistema visual oficial de **Mandioca, Turismo de Naturaleza**.
+
+Se actualiza a partir del **Manual de Marca oficial** (`src/assets/MANDIOCA/DOCS/MANUAL_DE_MARCA_MANDIOCA.pdf`) y de las reglas permanentes de `AGENTS.md`.
+
+Toda nueva sección, componente, página o funcionalidad visual debe respetar este sistema salvo que exista una instrucción explícita para modificarlo.
+
+> **Nota de versionado:** la versión 1.0 de este documento usaba una paleta provisional (`#EB9723`, `#B57223`, `#4A310E`, `#85BA3A`, `#1D5B8A`). Esa paleta **queda obsoleta** y debe reemplazarse por la paleta oficial del Manual de Marca definida en la sección 3.
+
+---
+
+# 1. FUENTES DE LA INFORMACIÓN Y ESTADO
+
+Para distinguir el origen de cada regla:
+
+- **[MANUAL]** — Regla extraída del texto oficial del Manual de Marca.
+- **[MEDIDO]** — Valor obtenido muestreando los assets oficiales / páginas del manual (los valores HEX de la paleta no figuran como texto en el PDF; fueron medidos de las muestras de color y de los PNG oficiales, con una tolerancia de ±2–3 por canal. Requieren confirmación final contra los archivos fuente si se dispusiera de ellos).
+- **[WEB]** — Decisión de implementación web (no está especificada en el manual; no contradice la marca).
+
+---
+
+# 2. CONCEPTO DE MARCA [MANUAL]
+
+La marca "MANDIOCA, Turismo de Naturaleza" evoca un **turismo inmersivo, sostenible y en armonía con la naturaleza**.
+
+El uso de la **mandioca**, una planta autóctona de valor cultural, refuerza una identidad **regional y tradicional** fuerte.
+
+Su signo icónico y su paleta de colores representan:
+
+- **Naturaleza y sostenibilidad**
+- **Cultura y tradición**
+- **Aventura y conexión con la tierra**
+
+La marca debe transmitir, además (según `AGENTS.md`): cercanía, confianza, profesionalismo, guía local y experiencias auténticas.
+
+---
+
+# 3. PALETA OFICIAL [MEDIDO] + [MANUAL]
+
+La selección cromática representa una conexión directa con la tierra, el entorno natural y la cultura regional.
+
+> Los valores HEX fueron medidos de la página de color del manual y contrastados con los PNG oficiales. Antes de usarlos en producción, confirmar contra los archivos fuente de la marca si están disponibles.
+
+## 3.1 Colores oficiales
+
+### Amarillo tierra
+
+```text
+#C36F26
+```
+
+Referencia en assets PNG: ≈ `#B87121`.
+
+Representa [MANUAL]: **el sol, la energía y el calor humano. Aporta vitalidad y visibilidad.**
+
+Uso:
+
+- CTA y botones principales
+- elementos de acción / conversión
+- detalles de energía
+- acentos visuales de jerarquía
+
+Es el color de acción de la marca.
+
+---
+
+### Marrón ocre
+
+```text
+#A88878
+```
+
+Referencia en assets PNG: ≈ `#9B7A63`–`#BD9473`.
+
+Representa [MANUAL]: **la tierra, los caminos rurales. Establece un vínculo cultural fuerte con la raíz de la mandioca.**
+
+Uso:
+
+- acentos secundarios
+- complemento del amarillo tierra
+- elementos ligados a tierra / rusticidad
+
+---
+
+### Marrón profundo
+
+```text
+#6A3B18
+```
+
+Referencia en assets PNG: ≈ `#683C11`.
+
+Representa [MANUAL]: **el tronco y las raíces, simbolizando estabilidad y conexión con la tierra.**
+
+Uso:
+
+- textos de alta jerarquía
+- fondos oscuros y secciones de alto contraste
+- footer
+- overlays
+- navegación
+
+Actúa como equivalente visual del "negro" de la interfaz. Evitar negro puro cuando este color cumpla la función.
+
+---
+
+### Verde natural
+
+```text
+#6BB644
+```
+
+Referencia en assets PNG: ≈ `#72B126`.
+
+Representa [MANUAL]: **vegetación, vida, crecimiento y frescura.**
+
+Uso:
+
+- acentos naturales
+- pequeños highlights
+- indicadores relacionados con naturaleza
+- estados secundarios
+
+No debe convertir la página en una web verde ni ser el color dominante de la interfaz.
+
+---
+
+### Azul río
+
+```text
+#135B85
+```
+
+Referencia en assets PNG: ≈ `#005C82`.
+
+Representa [MANUAL]: **los ríos y lagunas. Transmite calma y profundidad.**
+
+Uso:
+
+- elementos relacionados con agua (cascadas, ríos, experiencias acuáticas)
+- información secundaria / confianza
+- acentos puntuales
+
+Utilizar estratégicamente; no convertirlo en color dominante.
+
+---
+
+## 3.2 Regla 60 / 30 / 10
+
+Referencia visual de balance:
+
+- **60%** — neutros (blanco, crema, gris cálido)
+- **30%** — marrón profundo + fotografías / fondos naturales
+- **10%** — acentos (amarillo tierra, verde natural, azul río)
+
+Regla general: **1 color dominante + 1 color secundario + neutros.**
+
+No utilizar los cinco colores con la misma intensidad en una sección. Los colores crean jerarquía, no decoración excesiva.
+
+---
+
+## 3.3 Colores neutros [WEB]
+
+Los neutros equilibran la paleta y permiten que la fotografía y los colores de marca respiren.
+
+```text
+Blanco          #FFFFFF
+Warm White      #FAF8F3
+Light Warm      #F2F0EA
+Dark Text       #2B261F
+```
+
+No usar negros puros innecesariamente. Evitar fondos extremadamente saturados.
+
+---
+
+# 4. TIPOGRAFÍAS
+
+## 4.1 Logotipo — tipografía constructiva [MANUAL]
+
+Para representar el nombre de la marca se utilizó una **tipografía creada exclusivamente para la marca**.
+
+- No es una fuente licenciable ni debe recrearse con otra tipografía.
+- Usar siempre el logotipo como asset (archivos de `LOGOS_PNG` / `LOGOS_JPG`), nunca redibujarlo con texto del sistema.
+- No cambiar su tipografía bajo ninguna circunstancia (ver "Usos incorrectos").
+
+## 4.2 Tipografía secundaria [MANUAL]
+
+La tipografía secundaria es **"Cairoli Now Extended"** [MEDIDO: nombre leído por OCR del manual; verificar ortografía/licencia exacta contra la fuente original — PENDIENTE].
+
+Características según el manual:
+
+- estilo **sans serif**, más clásica
+- utilizada para el **tagline** de la marca
+- puede utilizarse en textos, cartas o donde se requiera un **carácter formal**
+
+## 4.3 Tipografía para web [WEB]
+
+- **Font display [RESUELTO]:** el propietario eligió la fuente local **"Agatha Pricilla"**
+  (`src/assets/FUENTE/agatha-pricilla.otf`, OpenType/CFF, familia interna "Agatha Pricilla",
+  **un solo estilo Regular, peso 400**, sin bold ni italic). Se implementó mediante `@font-face`
+  en `src/index.css` (con `font-display: swap`) y se asignó al token `--font-display`, que ya es el
+  rol de los títulos (`h1`–`h4`, base layer). Solo interviene el rol display: la **sans no cambió**.
+- **Font sans [PENDIENTE]:** la fuente secundaria oficial aún **no está disponible como webfont**
+  en el proyecto.
+- **PENDIENTE:** incorporar la webfont autorizada (o una sans aprobada por el propietario) cuando el
+  propietario la provea, y licenciarla correctamente.
+- Mientras tanto, el proyecto usa stacks del sistema preparados para ser reemplazados
+  (ver `src/index.css` y `src/config/typography.ts`). No descargar ni licenciar fuentes sin
+  autorización.
+- Regla: máximo **1 fuente display + 1 fuente sans**. La legibilidad tiene prioridad.
+
+---
+
+# 5. LOGO Y VARIANTES PERMITIDAS
+
+## 5.1 Estructura de la marca [MANUAL]
+
+La marca principal está constituida por un **signo gráfico** compuesto por:
+
+- **signo icónico** (el símbolo)
+- **signo verbal** (la tipografía "MANDIOCA")
+
+Es una marca reconocible que llama la atención por sus colores; debe ser consistente en todos los ámbitos de aplicación.
+
+> No se pueden modificar su estructura proporcional ni su diseño. [MANUAL]
+
+## 5.2 Variaciones de uso [MANUAL]
+
+| Variante | Descripción |
+| --- | --- |
+| **Marca principal** | Signo icónico + signo verbal + descriptor ("Turismo de Naturaleza"). Uso preferente. |
+| **Marca sin descriptor** | Signo + signo verbal, sin tagline. |
+| **Logotipo** | Solo tipografía (signo verbal). |
+| **Signo icónico** | Solo el símbolo. |
+
+Las variaciones aseguran que la marca se vea coherente y efectiva en distintos contextos y aplicaciones.
+
+## 5.3 Versiones de color [MANUAL]
+
+- **Color**: la aplicación a color **siempre tiene prioridad**, funciona como identificador de la marca.
+- **Acromáticas / B_N**: versiones en blanco y negro.
+- **Negativo**: solo en casos excepcionales, cuando la aplicación a color no sea posible.
+- **Sobre fondo verde**: existe una versión oficial para fondo verde natural (`MANDIOCA_FONDO VERDE.png`); usarla únicamente sobre ese color de fondo.
+
+> **Aclaración `B_N.png` vs `B_N..png` [MEDIDO — confirmado por muestreo de píxeles de los assets]:** los archivos no son duplicados; cada par es la misma variante en **positivo (negro)** y **negativo (blanco)**, ambos con fondo transparente. El sufijo **no es consistente entre variantes**:
+>
+> | Variante | `B_N.png` | `B_N..png` |
+> | --- | --- | --- |
+> | `LOGO CON DESCRIPTOR` | negro (positivo) | blanco (negativo) |
+> | `LOGO SIN DESCRIPTOR` | blanco (negativo) | negro (positivo) |
+> | `SOLO TIPOGRAFIA` | blanco (negativo) | negro (positivo) |
+
+## 5.4 Reducción máxima [MANUAL]
+
+Para tamaños pequeños y optimizar la legibilidad:
+
+```text
+Digital:      35 px  (máx. reducción)
+Impresión:    9 mm
+```
+
+> El manual también muestra referencias de `280 px` (digital) y `74 mm` (impresión) [MEDIDO/parcial — PENDIENTE: atribuir correctamente a cada variante].
+
+## 5.5 Áreas de seguridad [MANUAL]
+
+Para asegurar la legibilidad se debe dar **suficiente espacio de seguridad alrededor de la marca**.
+
+- El área de seguridad garantiza **aire visual**.
+- **Ningún elemento debe estar dentro de esta zona**.
+- Debe respetarse en **todas las aplicaciones**.
+
+> El valor numérico exacto del área de seguridad se define visualmente en el manual (pág. "Áreas de seguridad") [MEDIDO/parcial — PENDIENTE: replicar la medida exacta del PDF].
+
+## 5.6 Usos incorrectos [MANUAL]
+
+No podrán utilizarse bajo ninguna circunstancia:
+
+```text
+✗ Modificar sus colores
+✗ Estirar o aplastar
+✗ Invertir el orden
+✗ Cambiar su tipografía
+✗ Rotar
+✗ Agregar trazados
+```
+
+Reglas complementarias (AGENTS.md):
+
+- No deformar, no cambiar proporciones, no aplicar filtros arbitrarios, no cambiar colores sin autorización.
+- Mantener el aspect-ratio original y el espacio visual alrededor del logo.
+- **No reemplazar un asset real por una imagen genérica.**
+
+---
+
+# 6. ICONOGRAFÍA OFICIAL [MANUAL]
+
+La marca dispone de un set oficial de íconos para representar las **actividades** que ofrece.
+
+Actividades cubiertas:
+
+```text
+Kayakismo        Senderismo       Ciclismo       Gastronomía      Turismo rural
+Campamentos      Astroturismo     Flora y fauna  Wellness         Luna llena
+```
+
+- Los íconos pueden usarse a modo representativo para **diferenciar las distintas actividades** de la marca.
+- Usarlos de forma consistente (mismo estilo y tamaño) dentro de una misma sección.
+- [WEB] Para la interfaz, el sistema de iconografía UI (acciones, navegación) puede usar **Lucide React** (AGENTS.md); la iconografía oficial de actividades usa los **assets oficiales** de `ICONOS/`.
+- No usar emojis como iconografía principal de la interfaz.
+
+---
+
+# 7. ESTILO FOTOGRÁFICO
+
+La fotografía tiene un rol fundamental y es la protagonista visual.
+
+Priorizar [AGENTS.md]:
+
+- paisajes, selva, cascadas, ríos, senderos
+- **personas viviendo experiencias** (guías, viajeros)
+- detalles naturales
+
+Siempre que sea posible: **mostrar experiencias, no solo lugares.** Una persona viviendo una excursión puede tener mayor valor de conversión que una foto genérica de paisaje.
+
+Imágenes disponibles para el Hero (assets reales):
+
+```text
+src/assets/HERO/hero1.jpg   1920×1280  (3:2)
+src/assets/HERO/hero2.jpg   1920×1272
+src/assets/HERO/hero3.jpg   1920×1280
+```
+
+Reglas técnicas [WEB]:
+
+- formatos modernos, `object-fit`, aspect ratio definido, lazy loading, evitar layout shift
+- nunca deformar fotografías
+- aspect ratios de referencia: experiencias 4:3, destinos 16:9, editorial 3:4, hero 16:9 / 21:9
+
+---
+
+# 8. DIRECCIÓN VISUAL
+
+La dirección general es: **Natural + Editorial + Premium + Moderna + Humana** [AGENTS.md].
+
+Premium no significa dorado, negro o sombras pesadas. Premium significa: **fotografía excelente + composición + tipografía + espacio + coherencia**.
+
+Natural no significa llenar de hojas o usar verde en todo: la naturaleza surge de **fotografía + color + composición + contenido**.
+
+La página debe contar una historia (storytelling) y cada sección debe tener una función dentro del funnel:
+
+```text
+DESCUBRIR → IMPACTAR → EXPLORAR → IMAGINAR → CONFIAR → CONSULTAR → RESERVAR
+```
+
+---
+
+# 9. BOTONES [WEB]
+
+## Botón primario
+
+```text
+Background:  Amarillo tierra  #C36F26
+Texto:       Marrón profundo  #6A3B18  (o blanco si el contraste lo requiere)
+padding:     14px 22px
+border-radius: 9999px
+font-weight: 600
+```
+
+Hover:
+
+- Marrón ocre o marrón profundo si el contraste y la composición lo permiten.
+
+## Botón secundario
+
+- transparente, borde 1px `currentColor`, fondo neutro.
+- transición suave en hover.
+
+## Jerarquía
+
+- Un solo CTA primario por zona de decisión.
+- El CTA principal debe destacar por encima del resto.
+
+## Botón WhatsApp
+
+- visible, discreto, accesible, fijo.
+- especialmente en mobile.
+- no debe tapar CTA, formulario ni contenido importante.
+
+---
+
+# 10. COLORES DE FONDOS
+
+No todas las secciones deben tener el mismo fondo: crear ritmo visual.
+
+## Combinación A — Principal [WEB]
+
+```text
+Background:  Warm White  #FAF8F3
+Heading:     Marrón profundo  #6A3B18
+CTA:         Amarillo tierra  #C36F26
+Acento:      Verde natural  #6BB644
+```
+
+Uso: la mayoría de la página.
+
+## Combinación B — Oscura [WEB]
+
+```text
+Background:  Marrón profundo  #6A3B18
+Texto:       Blanco
+CTA:         Amarillo tierra  #C36F26
+Acento:      Verde natural  #6BB644
+```
+
+Uso: CTA final, bloques de storytelling, footer, secciones especiales de alto contraste.
+
+## Combinación C — Agua [WEB]
+
+```text
+Background:  Azul río  #135B85
+Texto:       Blanco
+CTA:         Amarillo tierra  #C36F26
+```
+
+Uso: **solamente** cuando el contexto esté relacionado con agua / cascadas / ríos.
+
+## Reglas de color
+
+- El verde natural **no** debe convertir la página en una web verde (solo acentos).
+- El azul río es estratégico, nunca dominante.
+- El amarillo tierra aparece donde se quiere llamar la atención (CTA, interacción), no indiscriminadamente.
+- 1 elemento dominante, 2 secundarios, resto de apoyo por pantalla.
+
+---
+
+# 11. JERARQUÍA TIPOGRÁFICA [WEB]
+
+Escala de implementación (define `src/index.css` y `src/config/typography.ts`). No usar tamaños arbitrarios.
+
+## H1
+
+```text
+Desktop:  56px – 80px   (display: clamp(2.75rem, 7vw, 5rem))
+Mobile:   40px – 52px
+Line-height: 1.0 – 1.1
+```
+
+Debe ser contundente.
+
+## H2
+
+```text
+Desktop:  42px – 60px
+Mobile:   32px – 40px
+```
+
+## H3
+
+```text
+Desktop:  24px – 32px
+Mobile:   22px – 28px
+```
+
+## Body Large
+
+```text
+18px – 20px · line-height 1.6   (subtítulos, introducciones)
+```
+
+## Body
+
+```text
+16px · line-height 1.55 – 1.7
+```
+
+## Small
+
+```text
+14px · line-height 1.5
+```
+
+---
+
+# 12. CRITERIOS RESPONSIVE [WEB]
+
+- Mobile-first.
+- Breakpoints estándar de Tailwind: `sm md lg xl 2xl`. No crear breakpoints personalizados sin necesidad.
+- Referencia de anchos: 320 · 375 · 390 · 414 · 768 · 1024 · 1280 · 1440+.
+- Mobile no es una versión reducida de desktop: diseñar específicamente la experiencia móvil.
+- No forzar grids de 3 columnas en mobile (apilar o carrusel según sección).
+- Formularios: inputs a ancho completo, labels siempre visibles.
+- Container central: max-width 1280–1400px; padding 20–24px mobile, 24–40px tablet, 32–64px desktop.
+
+---
+
+# 13. REGLAS PARA UTILIZAR LOS ASSETS OFICIALES
+
+## 13.1 Reglas generales
+
+1. **Usar siempre el asset real** cuando exista (AGENTS.md): nunca reemplazar un asset oficial por una imagen genérica.
+2. **No duplicar assets**: importar desde `src/assets/`, no copiar dentro de componentes.
+3. **No modificar logos**: proporciones, colores, tipografía, orden, rotación, trazados (sección 5.6).
+4. **Aspect ratio original** del logo; respetar su espacio visual.
+5. **Prioridad del color**: usar la versión a color; las acromáticas solo cuando sea necesario.
+6. **Formato**: PNG con transparencia para web; JPG para documentos/imágenes fotográficas (no usar JPG para logos con transparencia).
+7. **Variante correcta según contexto**: marca principal / sin descriptor / logotipo / signo icónico; fondo verde solo con la versión oficial para fondo verde.
+8. Respetar la **reducción máxima** (35 px digital / 9 mm impresión) y el **área de seguridad**.
+9. Los placeholders temporales deben ser evidentes en el código y reemplazarse por el asset real cuando esté disponible.
+
+## 13.2 Registro de assets oficiales
+
+### Fotografía — Hero
+
+| Ruta | Dimensiones |
+| --- | --- |
+| `src/assets/HERO/hero1.jpg` | 1920×1280 |
+| `src/assets/HERO/hero2.jpg` | 1920×1272 |
+| `src/assets/HERO/hero3.jpg` | 1920×1280 |
+
+### Fotografía — Nosotros
+
+| Ruta | Dimensiones | Descripción |
+| --- | --- | --- |
+| `src/assets/NOSOTROS/Misiones-a-puro-trekking.webp` | 768×1216 | Personas caminando por la selva (trekking). Seleccionada por el propietario para la sección `#nosotros`. Usada en `src/components/sections/About.tsx`. Orientación vertical; se renderiza con `object-cover` en `aspect-[3/4]` para preservar la composición. |
+
+### Logos — PNG (web)
+
+| Ruta | Dimensiones | Descripción |
+| --- | --- | --- |
+| `LOGOS_PNG/LOGO CON DESCRIPTOR.png` | 2542×1689 | Marca principal a color |
+| `LOGOS_PNG/LOGO CON DESCRIPTOR B_N.png` | 2542×1689 | Marca principal — **negro** (positivo) |
+| `LOGOS_PNG/LOGO CON DESCRIPTOR B_N..png` | 2542×1689 | Marca principal — **blanco** (negativo) |
+| `LOGOS_PNG/LOGO SIN DESCRIPTOR.png` | 3424×1224 | Marca a color sin descriptor |
+| `LOGOS_PNG/LOGO SIN DESCRIPTOR B_N.png` | 3424×1224 | Marca sin descriptor — **blanco** (negativo) |
+| `LOGOS_PNG/LOGO SIN DESCRIPTOR B_N..png` | 3424×1224 | Marca sin descriptor — **negro** (positivo) |
+| `LOGOS_PNG/SOLO TIPOGRAFIA.png` | 3045×807 | Logotipo (tipografía) a color |
+| `LOGOS_PNG/SOLO TIPOGRAFIA B_N.png` | 3045×807 | Logotipo — **blanco** (negativo) |
+| `LOGOS_PNG/SOLO TIPOGRAFIA B_N..png` | 3045×807 | Logotipo — **negro** (positivo) |
+| `LOGOS_PNG/MANDIOCA_ICONO PRINCIPAL.png` | 1378×1224 | Signo icónico — verde natural |
+| `LOGOS_PNG/MANDIOCA_ICONO.png` | 1387×1224 | Signo icónico — azul río |
+| `LOGOS_PNG/MANDIOCA_ICONO2.png` | 1387×1224 | Signo icónico — amarillo tierra |
+| `LOGOS_PNG/MANDIOCA_FONDO VERDE.png` | 1387×1224 | Marca sobre fondo verde natural |
+
+### Logo del Navbar — uso actual [WEB]
+
+Estado real de la integración (implementado en `src/components/layout/Logo.tsx` + `Navbar.tsx`):
+
+- **Variante utilizada:** Marca sin descriptor (signo + signo verbal).
+- **Versión a color** (`LOGOS_PNG/LOGO SIN DESCRIPTOR.png`): se usa cuando el Navbar está sobre fondo claro (`light=false`): con scroll aplicado o con el menú móvil abierto (fondo `warm-white/90`).
+- **Versión negativa blanca** (`LOGOS_PNG/LOGO SIN DESCRIPTOR B_N.png`): se usa cuando el Navbar está sobre el Hero (`light=true`, fondo `deep-earth`).
+- **Selección por estado:** `light ? logoBlanco : logoColor` en `Logo.tsx`; el Navbar deriva `light` de `!scrolled && !menuOpen`.
+- **Tamaño de render:** `h-10` (40 px) mobile / `h-14` (56 px) desktop con `w-auto` — mantiene el aspect-ratio original, respeta la reducción mínima del manual (35 px) y no se deforma ni recolorea. (Ajuste de tamaño aplicado a Navbar y Footer; reversible.)
+
+### Logos — JPG (documentos)
+
+| Ruta | Dimensiones | Descripción |
+| --- | --- | --- |
+| `LOGOS_JPG/LOGO CON DESCRIPTOR*.jpg` (4) | 2542×1689 | Marca principal |
+| `LOGOS_JPG/LOGO SIN DESCRIPTOR*.jpg` (4) | 3423×1223 | Marca sin descriptor |
+| `LOGOS_JPG/MANDIOCA_1.jpg` | 1377×1223 | Signo icónico — marrón profundo |
+| `LOGOS_JPG/MANDIOCA_2.jpg` | 1387×1223 | Signo icónico — amarillo tierra |
+| `LOGOS_JPG/MANDIOCA_3.jpg` | 1387×1223 | Signo icónico — verde natural |
+| `LOGOS_JPG/MANDIOCA_4.jpg` | 1387×1223 | Signo icónico — azul río |
+| `LOGOS_JPG/mandioca versiones-21.jpg` | 2542×1689 | Lámina de variaciones |
+
+### Iconografía oficial
+
+| Ruta | Dimensiones | Descripción |
+| --- | --- | --- |
+| `ICONOS/ICONOS_Mesa de trabajo 1*.png` (10) | 4500×8000 | Iconos oficiales de actividades |
+| `ICONOS/ICONOS DESTACADAS_Mesa de trabajo 1*.png` (10) | 4500×8000 | Iconos destacados de actividades |
+
+Actividades: kayakismo, senderismo, ciclismo, gastronomía, turismo rural, campamentos, astroturismo, flora y fauna, wellness, luna llena.
+
+> **PENDIENTE:** mapeo archivo → actividad (los nombres de archivo no lo indican).
+
+### Documentación
+
+| Ruta | Descripción |
+| --- | --- |
+| `src/assets/MANDIOCA/DOCS/MANUAL_DE_MARCA_MANDIOCA.pdf` | Manual de Marca oficial (24.8 MB) |
+
+> El manual referenciado como `docs/MANDIOCA_MANUAL_DE_MARCA.pdf` **no existe** en esa ruta; el manual está en `src/assets/MANDIOCA/DOCS/`.
+
+---
+
+# 14. SISTEMA DE CONTENIDO DEMO Y PLACEHOLDERS [WEB]
+
+## 14.1 Propósito y uso
+
+El contenido **DEMO** (ficticio, de muestra) se utiliza **únicamente** durante la etapa de desarrollo, prototipado y presentación al cliente.
+
+- **NO** representa información oficial de Mandioca.
+- **NO** debe presentarse como real en ningún contexto.
+- Está preparado para reemplazarse cuando Mandioca entregue el material definitivo **sin modificar innecesariamente la estructura visual ya aprobada**.
+
+## 14.2 Convención en el código
+
+Todo contenido provisional debe identificarse explícitamente en el código con comentarios equivalentes a:
+
+```text
+// DEMO CONTENT — REPLACE WITH CLIENT MATERIAL
+```
+
+El proyecto utiliza actualmente el marcador equivalente en español, como comentario al inicio de los archivos de datos correspondientes (`src/data/`):
+
+```text
+CONTENIDO DEMO — REEMPLAZAR CON INFORMACIÓN REAL DEL CLIENTE
+```
+
+## 14.3 Tipos de información que pueden ser provisionales (DEMO)
+
+- nombres de experiencias
+- descripciones
+- destinos
+- fotografías
+- actividades
+- testimonios
+- textos institucionales
+- información comercial
+- datos de contacto
+
+## 14.4 Información que NO debe inventarse ni presentarse como real
+
+- precios
+- horarios
+- teléfonos
+- direcciones exactas
+- disponibilidad
+- certificaciones
+- distancias exactas
+- establecimientos
+- políticas comerciales
+- datos legales
+- cualquier otro dato que pueda interpretarse como información oficial
+
+## 14.5 Fotografías temporales
+
+Mientras no existan fotografías definitivas, pueden utilizarse temporalmente **assets reales ya disponibles en el proyecto** (serie `HERO/hero1-3.jpg`) **únicamente como DEMO visual**, documentándolo en el archivo de datos correspondiente.
+
+## 14.6 Estado actual del proyecto
+
+**EXPERIENCIAS** contiene actualmente contenido **DEMO**: los nombres y descripciones de las experiencias (Senderismo, Ciclismo, Flora y fauna) son DEMO y deberán reemplazarse por el material real del cliente.
+
+**DESTINOS** contiene actualmente contenido **DEMO**: los nombres "La Selva", "Los Saltos" y "El Camino Rural" son nombres **DEMO** y no deben interpretarse como nombres oficiales de destinos de Mandioca. Las fotografías utilizadas en Destinos son **assets temporales/reutilizados** y deberán reemplazarse por fotografías específicas cuando Mandioca entregue el material definitivo.
+
+| Archivo | Contenido DEMO actual | Reemplazo |
+| --- | --- | --- |
+| `src/data/services.ts` | Sección "Experiencias": nombres, descripciones, duraciones, dificultades, modalidades y textos de la sección ficticios (las imágenes ya son [REAL] — ver `INFO` §8) | Material real de experiencias |
+| `src/data/destinations.ts` | Sección "Destinos": nombres (La Selva, Los Saltos, El Camino Rural), descripciones y textos de la sección ficticios | Destinos y fotografías definitivas |
+| Imágenes en `destinations.ts` | Reutilizan la serie `HERO/hero1-3.jpg` (temporales) | Fotografías propias de cada destino |
+| `src/config/business.ts` | `whatsapp`, `phone`, `email` e `instagram` vacíos | Datos de contacto reales |
+| `src/data/testimonials.ts` | Testimonios ficticios claramente marcados en la UI | Testimonios reales del cliente |
+
+> El contenido de `src/data/hero.ts` y la fotografía `hero1.jpg` del Hero **no** son DEMO: fueron definidos por el propietario. El CTA de las secciones DEMO (Experiencias y Destinos) dirige a `#pre-reserva`, el ancla de conversión (AGENTS.md §22), ya construida como sección de cierre (formulario pendiente de datos reales).
+
+> **Actualización de implementación (Experiencias):** la sección usa ahora una composición de
+> **experiencia protagonista + dos secundarias** (rompe la grilla de 3 cards, AGENTS.md §12),
+> con `featured: true` en `src/data/services.ts` para elegir la protagonista. Las imágenes de las
+> 3 cards son [REAL] (fotos dedicadas del propietario en `src/assets/EXPERIENCIAS/`); el badge
+> "Imagen DEMO" quedó obsoleto al reemplazarse los placeholders (los textos de sección y cards
+> siguen siendo DEMO). Detalle y registro por card en `INFO_REAL_OBSERVADA.md.txt` (§8).
+
+> **Actualización de implementación (Footer y botón WhatsApp flotante):** se agregó el **Footer**
+> (`src/components/layout/Footer.tsx`, cierre de la landing sobre `deep-earth` con divisor para
+> distinguirlo de la banda `#pre-reserva`) y el **botón WhatsApp flotante**
+> (`src/components/layout/WhatsAppButton.tsx`). Ambos consumen `businessConfig` y el helper
+> compartido `src/lib/whatsapp.ts`: mientras el número esté vacío, el botón no se renderiza y el
+> Footer muestra solo la ubicación real; al cargar los datos de contacto se activan solos. El color
+> del botón usa el token `--color-whatsapp` (color de marca del canal, fuera de la paleta Mandioca).
+> Registro completo en `INFO_REAL_OBSERVADA.md.txt` (§8).
+
+> **Actualización de implementación (Destinos):** la sección se reimplementó para **no parecer una
+> segunda versión de Experiences** y comunicar lugares/paisaje/exploración: fondo claro
+> (`default`/white, rompe el bloque dark Destinos+Nosotros), header apilado con hairline de
+> apertura, eyebrow con acento `earth`, protagonista **panorámica** (`16/9` mobile → `21/9`
+> desktop) con overlay editorial, y **dúo escalonado** asimétrico en vez de cards apiladas (sin
+> numeración ni barras de acento superiores). Sin cambios en `src/data/destinations.ts` (mismos
+> destinos, textos, imágenes y CTAs). Detalle y nota del plan B (crop de "Los Saltos") en
+> `INFO_REAL_OBSERVADA.md.txt` (§8).
+
+## 14.7 Checklist de reemplazo antes de producción
+
+```text
+[ ] Textos DEMO
+[ ] Experiencias DEMO
+[ ] Destinos DEMO
+[ ] Fotografías DEMO
+[ ] Testimonios DEMO
+[ ] Información comercial DEMO
+[ ] Datos de contacto DEMO
+```
+
+## 14.8 Regla final
+
+> **Ningún contenido DEMO debe permanecer en producción sin haber sido validado explícitamente por Mandioca.**
+
+---
+
+# 15. PENDIENTES DE CONFIRMACIÓN
+
+Lista de datos que no pudieron determinarse con total claridad y **no deben inventarse**:
+
+- [ ] **Valores HEX exactos** de la paleta: medidos de assets con tolerancia (±2–3). Confirmar contra archivos fuente (Illustrator/PDF original) si se dispone.
+- [ ] **Nombre exacto y licencia** de la tipografía secundaria "Cairoli Now Extended" (leído por OCR; verificar ortografía y licencia).
+- [ ] **Medida numérica del área de seguridad** del logo (definida visualmente en el manual).
+- [ ] **Atribución de las referencias de reducción** `280 px` / `74 mm` a cada variante del logo.
+- [ ] **Mapeo de archivos de íconos** a cada actividad.
+- [ ] **Webfont oficial** para web (incorporar cuando el propietario la provea).
+      Estado: **display resuelto** con fuente local "Agatha Pricilla" (OTF, `src/assets/FUENTE/`);
+      **sans pendiente** de webfont autorizada.
+- [ ] **Actualizar `src/index.css`** (tokens `--color-*`) y `AGENTS.md` a la paleta oficial del manual.
+
+---
+
+# 16. CHECKLIST DE CALIDAD VISUAL
+
+Antes de considerar terminada una sección:
+
+```text
+[ ] TypeScript sin errores
+[ ] Build correcto
+[ ] Sin errores de consola
+[ ] Responsive
+[ ] Mobile correctamente diseñado
+[ ] Assets oficiales revisados y utilizados
+[ ] Identidad visual respetada
+[ ] Paleta oficial respetada (sección 3)
+[ ] Logo: variante correcta, sin deformar, con área de seguridad
+[ ] CTA funcionando
+[ ] Formulario funcionando
+[ ] WhatsApp funcionando
+[ ] SEO básico
+[ ] Accesibilidad básica
+[ ] Performance razonable
+[ ] Sin información inventada
+[ ] Sin código innecesariamente duplicado
+```
+
+---
+
+# 17. PRINCIPIO FINAL
+
+La experiencia visual de Mandioca debe sentirse como:
+
+> **Una invitación a descubrir Misiones, no como una página que intenta vender una excursión.**
+
+El visitante debe terminar pensando **"Quiero vivir esto"**, y el siguiente paso debe ser **"Quiero consultar por WhatsApp"**.
+
+---
+
+# FIN DEL DESIGN SYSTEM

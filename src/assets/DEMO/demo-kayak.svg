@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Placeholder DEMO — Kayak">
+  <rect width="800" height="600" fill="#f2f0ea"/>
+  <rect width="800" height="8" fill="#135b85"/>
+  <text x="400" y="280" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="130" font-weight="800" letter-spacing="14" fill="#4a310e" fill-opacity="0.3">DEMO</text>
+  <text x="400" y="345" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="600" letter-spacing="8" fill="#4a310e" fill-opacity="0.65">KAYAK · AGUA</text>
+  <text x="400" y="565" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="500" fill="#4a310e" fill-opacity="0.4">PENDIENTE DE REEMPLAZO — FOTO REAL DEL CLIENTE</text>
+</svg>

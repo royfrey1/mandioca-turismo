@@ -1,0 +1,1203 @@
+# AGENTS.md
+
+## MANDIOCA — TURISMO DE NATURALEZA
+
+Este documento define las reglas permanentes de desarrollo, diseño, UX, arquitectura y comportamiento que deben respetarse al trabajar en este proyecto.
+
+**IMPORTANTE:** Estas instrucciones tienen prioridad sobre decisiones arbitrarias de diseño que puedan surgir durante futuras modificaciones.
+
+---
+
+# 1. IDENTIDAD DEL PROYECTO
+
+**Marca:** Mandioca, Turismo de Naturaleza
+
+**Ubicación:** Eldorado, Misiones, Argentina
+
+**Actividad:** Turismo de naturaleza, guías turísticos y excursiones por la provincia de Misiones.
+
+El sitio web representa una agencia turística real.
+
+El objetivo principal del proyecto es:
+
+> Convertir visitantes en consultas y pre-reservas.
+
+La web debe comunicar:
+
+* Naturaleza
+* Aventura
+* Descubrimiento
+* Misiones
+* Experiencias auténticas
+* Turismo responsable
+* Cercanía
+* Confianza
+* Profesionalismo
+* Guía local
+
+---
+
+# 2. PRINCIPIO FUNDAMENTAL
+
+Este proyecto NO debe parecer una plantilla genérica de turismo.
+
+No diseñar como:
+
+* Hotel
+* Resort
+* Agencia corporativa genérica
+* Ecommerce
+* SaaS
+* Dashboard
+* Landing de startup tecnológica
+* Template de WordPress
+
+La experiencia debe sentirse como una:
+
+**marca turística moderna, natural, auténtica, profesional y visualmente premium.**
+
+---
+
+# 3. STACK TECNOLÓGICO
+
+Utilizar obligatoriamente:
+
+* React
+* TypeScript
+* Vite
+* Tailwind CSS v4
+* Lucide React cuando sea necesario
+
+Preferir:
+
+* componentes reutilizables
+* arquitectura modular
+* datos desacoplados
+* HTML semántico
+* CSS variables
+* utilidades de Tailwind
+
+No utilizar:
+
+* Bootstrap
+* Material UI
+* Chakra UI
+* jQuery
+* librerías UI innecesarias
+* dependencias excesivas
+
+No agregar una dependencia para resolver algo que pueda solucionarse razonablemente con React + Tailwind.
+
+---
+
+# 4. IDENTIDAD CROMÁTICA OFICIAL
+
+> **ESTADO (sincronización de tokens):** los valores de esta sección son
+> **provisionales**. Los HEX oficiales del Manual de Marca figuran como
+> [MEDIDO] en `DESIGN_SYSTEM.md` (sección 3) y están **pendientes de
+> confirmación definitiva**. Los componentes consumen los colores por nombre
+> de token (`src/index.css`); al confirmarse los valores oficiales se actualiza
+> únicamente ese archivo central.
+
+La paleta oficial se define en el **Manual de Marca** y en `DESIGN_SYSTEM.md`.
+Los colores de esta sección no deben reemplazarse arbitrariamente ni repetirse
+como valores sueltos dentro de componentes.
+
+## Colores principales
+
+### Naranja principal
+
+```text
+#EB9723
+```
+
+Uso:
+
+* CTA principales
+* botones destacados
+* elementos de acción
+* detalles de energía
+* acentos visuales
+
+Representa:
+
+**aventura + energía + calidez**
+
+---
+
+### Naranja tierra
+
+```text
+#B57223
+```
+
+Uso:
+
+* acentos secundarios
+* detalles
+* estados hover cuando corresponda
+* elementos relacionados con tierra/naturaleza
+
+Representa:
+
+**tierra + rusticidad + naturaleza**
+
+---
+
+### Marrón profundo
+
+```text
+#4A310E
+```
+
+Uso:
+
+* textos oscuros
+* headings cuando corresponda
+* fondos oscuros
+* footer
+* secciones de alto contraste
+
+Representa:
+
+**tierra + profundidad + identidad natural**
+
+---
+
+### Verde naturaleza
+
+```text
+#85BA3A
+```
+
+Uso:
+
+* acentos naturales
+* detalles
+* elementos secundarios
+* indicadores relacionados con naturaleza
+* pequeños highlights
+
+Representa:
+
+**vida + vegetación + selva**
+
+---
+
+### Azul
+
+```text
+#1D5B8A
+```
+
+Uso:
+
+* acentos relacionados con agua
+* confianza
+* elementos secundarios
+* secciones asociadas a ríos/cascadas cuando tenga sentido
+
+Representa:
+
+**agua + aventura + confianza**
+
+---
+
+# 5. REGLAS DE COLOR
+
+NO utilizar los cinco colores con la misma intensidad en una sección.
+
+La identidad debe sentirse sofisticada.
+
+Regla general:
+
+**1 color dominante + 1 color secundario + neutros.**
+
+Ejemplo:
+
+```text
+Background:
+blanco / crema / neutro claro
+
+Primary:
+#EB9723
+
+Secondary:
+#85BA3A
+
+Dark:
+#4A310E
+
+Accent:
+#1D5B8A
+```
+
+Los colores deben utilizarse para crear jerarquía, no decoración excesiva.
+
+---
+
+# 6. COLORES NEUTROS
+
+Los neutros pueden utilizarse libremente para equilibrar la paleta.
+
+Preferir:
+
+* blanco
+* off-white
+* crema muy suave
+* gris cálido
+* gris oscuro
+
+No utilizar negros puros innecesariamente.
+
+Evitar fondos extremadamente saturados.
+
+La web debe sentirse luminosa, natural y respirable.
+
+---
+
+# 7. SISTEMA DE DISEÑO
+
+Las variables de color deben estar centralizadas.
+
+No repetir constantemente:
+
+```css
+#EB9723
+```
+
+dentro de múltiples componentes.
+
+Crear variables reutilizables.
+
+Ejemplo conceptual:
+
+```css
+:root {
+  --color-primary: #EB9723;
+  --color-earth: #B57223;
+  --color-dark-earth: #4A310E;
+  --color-nature: #85BA3A;
+  --color-water: #1D5B8A;
+}
+```
+
+> Nota: los valores del ejemplo son los **provisionales** de la sección 4.
+> Los tokens oficiales (pendientes de confirmación) se definen en `DESIGN_SYSTEM.md` §3.
+
+La implementación exacta debe respetar Tailwind CSS v4.
+
+---
+
+# 8. ASSETS
+
+El propietario del proyecto agregará posteriormente:
+
+* Logos
+* Fotografías
+* Videos
+* Material gráfico
+* Recursos de marca
+
+Los assets estarán dentro de:
+
+```text
+src/assets/
+```
+
+## REGLA CRÍTICA
+
+Antes de diseñar o modificar una sección visual:
+
+1. Revisar `src/assets`.
+2. Identificar imágenes disponibles.
+3. Identificar logos.
+4. Identificar videos.
+5. Identificar variantes del logo.
+6. Determinar qué assets corresponden a cada sección.
+
+**NO reemplazar assets reales por imágenes genéricas si existe un asset apropiado.**
+
+---
+
+# 9. IMÁGENES PLACEHOLDER
+
+Si todavía no existe una imagen apropiada:
+
+Se permite utilizar un placeholder temporal.
+
+Pero debe ser evidente en el código que se trata de un recurso temporal.
+
+No presentar contenido ficticio como si fuera material real de la agencia.
+
+Una vez que el usuario agregue nuevos assets, utilizarlos.
+
+---
+
+# 10. LOGOS
+
+No:
+
+* deformar logos
+* cambiar sus proporciones
+* aplicar filtros arbitrarios
+* cambiar sus colores sin autorización
+* utilizar variantes inexistentes
+
+Mantener siempre:
+
+```text
+aspect-ratio original
+```
+
+y respetar el espacio visual alrededor del logo.
+
+---
+
+# 11. DIRECCIÓN ARTÍSTICA
+
+La dirección visual general debe ser:
+
+**Natural + Editorial + Premium + Moderna + Humana**
+
+La web debe tener una sensación cercana a una marca turística boutique.
+
+Priorizar:
+
+* fotografías grandes
+* composición editorial
+* espacios negativos
+* tipografía elegante
+* contraste
+* secciones con diferentes ritmos
+* composición visual
+* microinteracciones
+* jerarquía clara
+
+---
+
+# 12. EVITAR DISEÑO GENÉRICO
+
+NO crear:
+
+```text
+Hero
+↓
+3 cards
+↓
+3 cards
+↓
+Testimonials cards
+↓
+CTA
+↓
+Footer
+```
+
+si todas las secciones tienen la misma estructura.
+
+La landing debe contar una historia.
+
+El usuario debe sentir que está avanzando por una experiencia.
+
+---
+
+# 13. STORYTELLING
+
+La página debe tener una narrativa aproximada:
+
+```text
+DESCUBRIR
+↓
+IMPACTAR
+↓
+EXPLORAR
+↓
+IMAGINAR
+↓
+CONFIAR
+↓
+CONSULTAR
+↓
+RESERVAR
+```
+
+Cada sección debe tener una función.
+
+No agregar secciones simplemente para hacer la página más larga.
+
+---
+
+# 14. HERO
+
+El Hero debe ser visualmente potente.
+
+Debe responder inmediatamente:
+
+### ¿Qué es Mandioca?
+
+Agencia de turismo y naturaleza.
+
+### ¿Dónde?
+
+Misiones, Argentina.
+
+### ¿Qué ofrece?
+
+Guías y experiencias/excursiones.
+
+### ¿Qué debe hacer el visitante?
+
+Consultar o pre-reservar.
+
+Debe existir un CTA primario.
+
+CTA recomendado:
+
+```text
+Consultar una experiencia
+```
+
+o
+
+```text
+Quiero conocer Misiones
+```
+
+El copy definitivo puede modificarse según el contenido real disponible.
+
+---
+
+# 15. TIPOGRAFÍA
+
+La tipografía debe transmitir:
+
+* naturaleza
+* elegancia
+* cercanía
+* profesionalismo
+
+Preferir combinaciones:
+
+**Display / editorial + Sans-serif moderna**
+
+No utilizar demasiadas familias tipográficas.
+
+Máximo recomendado:
+
+```text
+1 fuente display
++
+1 fuente sans-serif
+```
+
+La legibilidad siempre tiene prioridad.
+
+---
+
+# 16. BOTONES
+
+Los CTA principales deben tener una jerarquía clara.
+
+El botón principal puede utilizar:
+
+```text
+#EB9723
+```
+
+El texto debe tener suficiente contraste.
+
+Hover:
+
+Puede utilizarse:
+
+```text
+#B57223
+```
+
+si el contraste y la composición lo permiten.
+
+No utilizar efectos exagerados.
+
+---
+
+# 17. CARDS
+
+No abusar de cards.
+
+Una card debe existir solamente cuando ayuda a organizar información.
+
+Las cards deben sentirse:
+
+* limpias
+* editoriales
+* visuales
+* modernas
+
+Evitar:
+
+* sombras enormes
+* bordes excesivos
+* gradientes genéricos
+* exceso de iconos
+* texto innecesario
+
+---
+
+# 18. FOTOGRAFÍA
+
+La fotografía tiene un rol fundamental.
+
+Priorizar:
+
+* paisajes
+* selva
+* cascadas
+* ríos
+* senderos
+* personas viviendo experiencias
+* guías
+* detalles naturales
+
+Siempre que sea posible:
+
+**mostrar experiencias, no solamente lugares.**
+
+Una foto de una persona viviendo una excursión puede tener mayor valor de conversión que una foto genérica de paisaje.
+
+---
+
+# 19. GALERÍA
+
+La galería debe sentirse editorial.
+
+Evitar una cuadrícula homogénea aburrida.
+
+Se pueden utilizar:
+
+* tamaños diferentes
+* imágenes grandes
+* composiciones asimétricas
+* aspect ratios variados
+* hover sutil
+* overlays mínimos
+
+La galería debe funcionar también en mobile.
+
+---
+
+# 20. VIDEO
+
+Los videos pueden utilizarse para generar emoción.
+
+Priorizar:
+
+* carga diferida
+* poster image
+* optimización
+* evitar autoplay pesado cuando perjudique UX
+* controles claros cuando corresponda
+
+Nunca sacrificar performance por decoración.
+
+---
+
+# 21. TESTIMONIOS
+
+Los testimonios deben generar confianza.
+
+Nunca inventar testimonios reales.
+
+Si no existen todavía:
+
+Utilizar placeholders claramente marcados.
+
+Cuando se proporcionen testimonios reales, deben ser fácilmente incorporables desde los archivos de datos.
+
+---
+
+# 22. PRE-RESERVA
+
+La pre-reserva es una funcionalidad fundamental.
+
+El formulario debe ser:
+
+* simple
+* rápido
+* mobile-first
+* claro
+* orientado a conversión
+
+Campos sugeridos:
+
+```text
+Nombre
+WhatsApp
+Email
+Fecha
+Cantidad de personas
+Experiencia
+Destino
+Mensaje
+```
+
+No agregar campos innecesarios.
+
+---
+
+# 23. WHATSAPP
+
+La conversión principal será WhatsApp.
+
+El formulario debe construir un mensaje automáticamente.
+
+Ejemplo conceptual:
+
+```text
+Hola Mandioca 👋
+
+Quiero realizar una pre-reserva.
+
+Nombre:
+...
+
+WhatsApp:
+...
+
+Fecha:
+...
+
+Personas:
+...
+
+Experiencia:
+...
+
+Destino:
+...
+
+Mensaje:
+...
+```
+
+Luego abrir WhatsApp con el mensaje precompletado.
+
+---
+
+# 24. CONFIGURACIÓN DEL NEGOCIO
+
+Todos los datos comerciales deben estar centralizados.
+
+Crear algo similar a:
+
+```text
+src/config/business.ts
+```
+
+Ejemplo:
+
+```ts
+export const businessConfig = {
+  name: "Mandioca, Turismo de Naturaleza",
+  location: "Eldorado, Misiones, Argentina",
+  whatsapp: "",
+  phone: "",
+  email: "",
+  instagram: "",
+};
+```
+
+NO duplicar información comercial en diferentes componentes.
+
+---
+
+# 25. DATA
+
+El contenido debe estar desacoplado del diseño.
+
+Ejemplo:
+
+```text
+src/data/services.ts
+src/data/destinations.ts
+src/data/testimonials.ts
+src/data/gallery.ts
+```
+
+Esto permitirá actualizar el contenido sin modificar la arquitectura visual.
+
+---
+
+# 26. ARQUITECTURA
+
+Mantener componentes pequeños y reutilizables.
+
+Estructura sugerida:
+
+```text
+src/
+├── assets/
+│
+├── components/
+│   ├── layout/
+│   ├── sections/
+│   └── ui/
+│
+├── config/
+│
+├── data/
+│
+├── hooks/
+│
+├── lib/
+│
+├── App.tsx
+├── main.tsx
+└── index.css
+```
+
+No crear archivos gigantes.
+
+No convertir `App.tsx` en un archivo de cientos de líneas.
+
+---
+
+# 27. RESPONSIVE
+
+Mobile-first.
+
+Optimizar especialmente:
+
+```text
+320px
+375px
+390px
+414px
+768px
+1024px
+1280px
+1440px+
+```
+
+No considerar mobile como una simple reducción de desktop.
+
+Diseñar específicamente la experiencia móvil.
+
+---
+
+# 28. PERFORMANCE
+
+Prioridad alta.
+
+Optimizar:
+
+* imágenes
+* videos
+* fuentes
+* lazy loading
+* bundle
+* renderizado
+
+Las fotografías del cliente pueden ser grandes.
+
+No cargar todo el contenido multimedia inmediatamente.
+
+---
+
+# 29. SEO
+
+La web debe estar preparada para posicionamiento local.
+
+Contexto:
+
+```text
+Eldorado
+Misiones
+Argentina
+Turismo de naturaleza
+Excursiones
+Guía turístico
+Experiencias en Misiones
+```
+
+No realizar keyword stuffing.
+
+Implementar correctamente:
+
+* title
+* description
+* headings
+* alt
+* Open Graph
+* semantic HTML
+* metadata
+
+---
+
+# 30. ACCESSIBILITY
+
+Respetar:
+
+* contraste
+* labels
+* focus
+* keyboard navigation
+* semantic HTML
+* alt text
+* aria-label cuando corresponda
+
+Nunca utilizar únicamente color para comunicar estados.
+
+---
+
+# 31. ANIMACIONES
+
+Animaciones:
+
+**sutiles y elegantes.**
+
+Permitidas:
+
+* fade
+* reveal
+* transform
+* hover
+* parallax moderado
+* scroll transitions
+
+No utilizar:
+
+* animaciones exageradas
+* elementos rebotando
+* efectos constantes
+* transiciones que afecten performance
+
+El usuario debe notar calidad, no la animación.
+
+---
+
+# 32. ICONOGRAFÍA
+
+Utilizar Lucide React cuando sea necesario.
+
+Los iconos deben:
+
+* ser simples
+* consistentes
+* tener propósito
+
+No utilizar iconos simplemente para llenar espacios.
+
+---
+
+# 33. REGLAS DE CONTENIDO
+
+Nunca inventar:
+
+* precios
+* teléfonos
+* emails
+* redes sociales
+* destinos
+* servicios
+* certificaciones
+* premios
+* cantidad de clientes
+* años de experiencia
+* testimonios
+
+Si falta información:
+
+```text
+crear estructura
++
+placeholder
++
+dejar preparado para reemplazo
+```
+
+> **Base de conocimiento provisional:** la información REAL observada en los canales públicos
+> de Mandioca (Instagram, Google Maps) y el checklist de pendientes del cliente se registran en
+> `INFO_REAL_OBSERVADA.md.txt`. Ese contenido es referencia futura, NO debe reemplazar el
+> contenido DEMO del sitio hasta confirmación del cliente (ver `DESING_SYSTEM.md` §14).
+
+---
+
+# 34. REGLAS DE CÓDIGO
+
+Preferir:
+
+* TypeScript estricto
+* componentes funcionales
+* props tipadas
+* interfaces/types claros
+* funciones pequeñas
+* nombres descriptivos
+
+Evitar:
+
+* `any`
+* duplicación
+* lógica innecesariamente compleja
+* componentes gigantes
+* dependencias innecesarias
+* código muerto
+
+---
+
+# 35. REGLA DE INSPECCIÓN
+
+Antes de realizar modificaciones importantes:
+
+1. Revisar estructura.
+2. Revisar componentes existentes.
+3. Revisar assets.
+4. Revisar datos.
+5. Revisar configuración.
+6. Reutilizar código existente cuando sea correcto.
+
+No reescribir componentes simplemente porque sea más rápido.
+
+---
+
+# 36. REGLA DE NO DESTRUCTIVIDAD
+
+No eliminar:
+
+* assets
+* componentes
+* datos
+* configuraciones
+* funcionalidades
+
+sin una razón clara.
+
+Antes de eliminar algo, verificar si es utilizado por otra parte del proyecto.
+
+---
+
+# 37. CALIDAD VISUAL
+
+Antes de considerar terminada una sección, revisar:
+
+### Espaciado
+
+¿Existe suficiente respiración?
+
+### Jerarquía
+
+¿Se entiende qué mirar primero?
+
+### Contraste
+
+¿Los CTA destacan?
+
+### Imagen
+
+¿La fotografía tiene suficiente protagonismo?
+
+### Tipografía
+
+¿Es legible?
+
+### Responsive
+
+¿Funciona correctamente en mobile?
+
+### Conversión
+
+¿La sección ayuda a acercar al usuario a una consulta?
+
+---
+
+# 38. CRITERIO DE DISEÑO
+
+Ante una decisión entre:
+
+```text
+más elementos
+```
+
+y
+
+```text
+menos elementos pero mejor jerarquizados
+```
+
+preferir:
+
+**menos elementos + mejor jerarquía.**
+
+Ante una decisión entre:
+
+```text
+efecto visual llamativo
+```
+
+y
+
+```text
+mejor UX
+```
+
+preferir:
+
+**mejor UX.**
+
+Ante una decisión entre:
+
+```text
+código rápido
+```
+
+y
+
+```text
+código mantenible
+```
+
+preferir:
+
+**código mantenible.**
+
+---
+
+# 39. OBJETIVO DE CONVERSIÓN
+
+El funnel principal es:
+
+```text
+VISITANTE
+↓
+IMPACTO VISUAL
+↓
+DESCUBRE MISIÓN
+↓
+CONOCE MANDIOCA
+↓
+VE EXPERIENCIAS
+↓
+GENERA DESEO
+↓
+LEE TESTIMONIOS
+↓
+CONFÍA
+↓
+PRE-RESERVA
+↓
+WHATSAPP
+↓
+VENTA
+```
+
+Toda decisión de UX debe considerar este funnel.
+
+---
+
+# 40. PRIORIDAD DEL PROYECTO
+
+Orden de prioridades:
+
+```text
+1. Conversión
+2. Experiencia de usuario
+3. Identidad de marca
+4. Calidad visual
+5. Responsive
+6. Performance
+7. SEO
+8. Accesibilidad
+9. Mantenibilidad
+```
+
+Ninguna decisión visual debe perjudicar las prioridades superiores.
+
+---
+
+# 41. SEGUNDA FASE FUTURA
+
+El proyecto debe quedar preparado para incorporar posteriormente:
+
+* más excursiones
+* más destinos
+* páginas individuales de experiencias
+* galería ampliada
+* videos
+* SEO local avanzado
+* Google Maps
+* Google Business Profile
+* analítica
+* eventos de conversión
+* CMS
+* backend
+* base de datos
+* sistema de reservas
+* calendario
+* disponibilidad
+* pagos online
+
+Pero:
+
+**NO implementar estas funcionalidades hasta que sean solicitadas.**
+
+La primera versión debe centrarse en una landing page excelente y en la conversión mediante WhatsApp.
+
+---
+
+# 42. CHECKLIST OBLIGATORIO ANTES DE FINALIZAR CAMBIOS
+
+Antes de considerar cualquier tarea terminada:
+
+```text
+[ ] TypeScript sin errores
+[ ] Build correcto
+[ ] Sin errores de consola
+[ ] Responsive
+[ ] Mobile correctamente diseñado
+[ ] Assets revisados
+[ ] Identidad visual respetada
+[ ] Colores oficiales respetados
+[ ] CTA funcionando
+[ ] Formulario funcionando
+[ ] WhatsApp funcionando
+[ ] SEO básico
+[ ] Accesibilidad básica
+[ ] Performance razonable
+[ ] Sin información inventada
+[ ] Sin código innecesariamente duplicado
+```
+
+---
+
+# 43. REGLA FINAL PARA EL AGENTE
+
+Cuando trabajes en Mandioca:
+
+**No pienses únicamente como programador.**
+
+Pensá simultáneamente como:
+
+* Senior Frontend Developer
+* Full Stack Developer
+* UX Designer
+* UI Designer
+* CRO Specialist
+* SEO Specialist
+* Brand Designer
+* Technical Architect
+
+Cada modificación debe preguntarse:
+
+> ¿Esto mejora la experiencia del usuario?
+>
+> ¿Esto mantiene la identidad de Mandioca?
+>
+> ¿Esto ayuda a convertir visitantes en consultas?
+>
+> ¿Esto mantiene el proyecto escalable?
+
+Si la respuesta es no, reconsiderar la implementación.
+
+---
+
+# FIN DE AGENTS.MD

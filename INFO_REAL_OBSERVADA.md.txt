@@ -1,0 +1,643 @@
+# INFORMACIÓN REAL OBSERVADA — MANDIOCA
+
+## Turismo de Naturaleza · Eldorado, Misiones
+
+**Estado:** BASE DE CONOCIMIENTO PROVISIONAL (no reemplaza el contenido DEMO del sitio).
+
+Este documento registra **información pública observada** en los canales públicos de Mandioca
+(Instagram y Google Maps). Su propósito es servir como referencia futura y como checklist de
+pendientes para confirmar con el cliente.
+
+> **REGLA FUNDAMENTAL:** ningún dato registrado aquí es, por sí solo, información oficial
+> publicable. Todo debe confirmarse con el cliente antes de incorporarse a la web.
+> Ver `AGENTS.md` (§33, §34) y `DESING_SYSTEM.md` (§14).
+
+---
+
+## 1. FUENTES ANALIZADAS
+
+| Fuente | Identificador | Datos observados |
+| --- | --- | --- |
+| Instagram | `mandioca.turismo` | Biografía + publicaciones |
+| Google Maps | Mandioca Turismo Aventura | Ficha, categoría, valoración, opiniones, teléfono |
+
+### Google Maps — ficha pública
+
+```text
+Nombre:     Mandioca Turismo Aventura
+Categoría:  Atracción turística
+Valoración: 5.0
+Opiniones:  21
+Teléfono:   03757 40-5302
+Dirección:  Av. San Martín Oeste 2613, N3380 Eldorado, Misiones.
+```
+
+> **OBSERVADO, NO PUBLICABLE AÚN:** estos datos provienen de la observación pública y no
+> deben considerarse definitivos hasta confirmación del cliente.
+
+---
+
+## 2. BIOGRAFÍA PÚBLICA DE INSTAGRAM
+
+Texto observado en `mandioca.turismo`:
+
+```text
+Marcio | Expediciones en Misiones
+Guía de turismo
+Experiencias para sentir 🍃
+Exclusividad 🧉
+```
+
+Ubicación indicada en la biografía:
+
+```text
+Av San Martín oeste 2613, Eldorado, Misiones 3380
+```
+
+Además, la biografía contiene un enlace hacia Google Maps.
+
+### Actividades / servicios mencionados en la biografía
+
+- Safari Off Road
+- Kayak
+- Observación de fauna
+- Trekking
+- Saltos y cascadas
+
+---
+
+## 3. CONTENIDO Y EXPERIENCIAS DETECTADAS EN PUBLICACIONES
+
+Todo lo siguiente es **información observada**, no una ficha comercial definitiva.
+
+### 3.1 Destino Andresito
+
+Se menciona el **"Destino Andresito"**.
+
+Una publicación describe la zona ubicada a aproximadamente **5 km de las Cataratas del Iguazú**
+[PENDIENTE: no publicar este dato como definitivo sin confirmación del cliente].
+
+Menciones registradas:
+
+- Caminos rurales de tierra colorada.
+- Selva.
+- Silencio y naturaleza.
+- Senderismo en áreas protegidas.
+- Kayak en el río Iguazú.
+- Observación de fauna.
+- Recorridos off-road por caminos selváticos.
+- Visita a un secadero de la Cooperativa Yerba Mate Andresito.
+- Cultura y gastronomía regional.
+- Conservación y naturaleza.
+
+### 3.2 Full Day Eldorado
+
+Se detectó una publicación que menciona **"Experiencia Full Day Eldorado"**.
+
+Incluye una experiencia de caminata por la selva. Menciones:
+
+- Arroyos Piray Mini y Guazú.
+- Caminata por la selva.
+- Caminos de tierra colorada.
+- Naturaleza.
+
+**PENDIENTE DE CONFIRMACIÓN:**
+
+- Duración exacta.
+- Itinerario.
+- Qué incluye.
+- Nivel de dificultad.
+- Precio.
+- Disponibilidad.
+- Punto de encuentro.
+- Público recomendado.
+
+### 3.3 Piray Guazú
+
+Se detectó una publicación titulada **"Experiencia Piray Guazú"**.
+
+La publicación indica que navegan uno de los arroyos importantes de la provincia. Se observó
+actividad de **kayak**.
+
+**PENDIENTE DE CONFIRMACIÓN:**
+
+- Duración.
+- Recorrido exacto.
+- Punto de salida.
+- Nivel de dificultad.
+- Edad mínima.
+- Equipamiento incluido.
+- Precio.
+- Modalidad.
+- Disponibilidad.
+
+### 3.4 Kayak
+
+El kayak aparece repetidamente en el contenido de Mandioca.
+
+Cuerpos de agua con referencias observadas:
+
+- Río Iguazú.
+- Piray Guazú.
+- Zona de Andresito.
+
+También aparecen experiencias de **kayak al amanecer**.
+
+> NO asumir que todas las experiencias de kayak tienen las mismas condiciones.
+
+**PENDIENTE DE CONFIRMACIÓN:**
+
+- Todas las rutas disponibles.
+- Duraciones.
+- Precios.
+- Requisitos.
+- Equipamiento.
+- Nivel de dificultad.
+- Edad mínima.
+- Temporadas.
+- Modalidad de reserva.
+
+### 3.5 Senderismo / Trekking
+
+La cuenta menciona **Trekking** y **Senderismo**.
+
+Caminatas observadas por:
+
+- Selva misionera.
+- Caminos rurales.
+- Senderos.
+- Áreas protegidas.
+- Entornos cercanos a arroyos.
+
+> No asumir todavía que todos esos recorridos son productos independientes.
+
+### 3.6 Safari Off Road
+
+"Safari Off Road" aparece explícitamente en la biografía.
+
+También existen publicaciones con caminos rurales de tierra colorada y recorridos por zonas
+selváticas.
+
+**PENDIENTE DE CONFIRMACIÓN:**
+
+- Si es un producto independiente.
+- Duración.
+- Vehículo utilizado.
+- Capacidad.
+- Itinerario.
+- Precio.
+- Qué incluye.
+- Disponibilidad.
+
+### 3.7 Observación de fauna / biodiversidad
+
+La observación de fauna aparece explícitamente en la biografía y en publicaciones.
+
+> Registrar como servicio/actividad **confirmado a nivel conceptual**, pero **no inventar**
+> especies, recorridos ni ubicaciones concretas.
+
+### 3.8 Naturaleza y biodiversidad
+
+El contenido muestra fuerte presencia de:
+
+- Selva misionera.
+- Flora.
+- Fauna.
+- Arroyos.
+- Ríos.
+- Caminos rurales.
+- Tierra colorada.
+- Paisajes naturales.
+- Conservación.
+
+También aparece contenido relacionado con biodiversidad y observación de especies.
+
+### 3.9 Parque Provincial Urugua-í
+
+Se detectó contenido relacionado con:
+
+- Parque Provincial Urugua-í.
+- Arroyo Urugua-í.
+
+Se observa señalización de senderos y naturaleza.
+
+> No asumir todavía que Mandioca comercializa oficialmente una excursión específica con ese
+> nombre.
+
+### 3.10 Ruta Nacional 101 / Selva Misionera
+
+Se detectó contenido asociado a la Ruta Nacional 101 y al Parque Nacional Iguazú.
+
+También aparecen caminos de tierra colorada y recorridos en bicicleta en
+publicaciones/comentarios relacionados.
+
+> Registrar como **contexto territorial observado**, no como producto comercial confirmado.
+
+### 3.11 Bienestar / Wellness
+
+En contenido visual antiguo aparece una propuesta asociada a:
+
+- Senderismo
+- Wellness
+- Kayak
+- Luna llena
+- Conexión con la naturaleza
+- Bienestar
+
+También se observa una experiencia de relajación/respiración junto al entorno natural.
+
+> **PENDIENTE DE CONFIRMACIÓN:** no asumir que "Wellness" es actualmente un producto activo.
+
+### 3.12 Experiencias al amanecer
+
+Se observan experiencias de kayak y naturaleza durante el amanecer, como parte del contenido
+visual de la marca.
+
+> No convertir automáticamente en producto independiente hasta confirmación.
+
+### 3.13 Experiencias nocturnas
+
+Se observan contenidos de:
+
+- Fogón.
+- Encuentros nocturnos.
+- Naturaleza de noche.
+
+> **PENDIENTE DE CONFIRMACIÓN:** no asumir que sea una excursión comercial vigente.
+
+### 3.14 Turismo rural / cultura / gastronomía
+
+En publicaciones relacionadas con Andresito se menciona:
+
+- Cultura regional.
+- Gastronomía.
+- Visita a secadero de yerba mate.
+- Cooperativa Yerba Mate Andresito.
+
+> Posible diferencial importante de la propuesta, pero debe confirmarse cómo se comercializa
+> actualmente.
+
+### 3.15 Anchieta, Brasil
+
+Se detectó contenido promocionando un paquete de **"2 DÍAS Y 1 NOCHE"** con destino
+**Anchieta, Brasil**.
+
+La publicación menciona:
+
+- Senderos.
+- Cascadas.
+- Paisajes.
+- Selva.
+- Cultura.
+- Gastronomía.
+- Una noche en este destino.
+
+> **EXPERIENCIA / DESTINO OBSERVADO EN INSTAGRAM — PENDIENTE DE CONFIRMACIÓN.**
+> No asumir que esta propuesta sigue vigente.
+
+---
+
+## 4. TONO Y PROPUESTA DE MARCA OBSERVADA
+
+La comunicación de Mandioca no parece centrarse solamente en "hacer excursiones".
+
+La marca comunica:
+
+- Naturaleza.
+- Aventura.
+- Exclusividad.
+- Conexión.
+- Tranquilidad.
+- Conservación.
+- Experiencias auténticas.
+- Selva misionera.
+- Paisajes.
+- Cultura regional.
+- Turismo de naturaleza.
+- Guías locales.
+- Experiencias personalizadas.
+
+> Usar como **referencia conceptual** para futuras secciones del sitio, sin inventar claims
+> comerciales que no hayan sido confirmados.
+
+---
+
+## 5. INFORMACIÓN QUE TODAVÍA FALTA OBTENER DEL CLIENTE
+
+Checklist de pendientes (no inventar ninguno de estos datos):
+
+- Listado oficial y actualizado de experiencias.
+- Nombre comercial exacto de cada experiencia.
+- Descripción oficial.
+- Duración.
+- Dificultad.
+- Edad mínima/máxima.
+- Precio.
+- Qué incluye.
+- Qué debe llevar el visitante.
+- Disponibilidad.
+- Temporadas.
+- Horarios.
+- Punto de encuentro.
+- Ubicación.
+- Distancias.
+- Cantidad máxima de personas.
+- Modalidad privada/grupal.
+- Política de reserva.
+- Política de cancelación.
+- Medios de pago.
+- Información sobre seguros.
+- Certificaciones/habilitaciones que quieran mostrar.
+- Fotografías oficiales autorizadas para utilizar en la web.
+- Logo y variantes definitivas.
+- Testimonios que el cliente quiera publicar.
+- Redes sociales oficiales.
+- WhatsApp de reservas.
+- Email comercial.
+- Dominio/sitio web definitivo.
+- Información oficial sobre cada destino.
+
+---
+
+## 6. SEPARACIÓN ENTRE CONTENIDO REAL Y DEMO
+
+### A. CONTENIDO REAL OBSERVADO
+
+Información extraída de publicaciones y datos públicos (registrada en este documento).
+Requiere confirmación del cliente antes de publicarse.
+
+### B. CONTENIDO DEMO (lo que sigue siendo DEMO hoy)
+
+Las secciones actuales **"Experiencias"** y **"Destinos"** **continúan siendo DEMO** hasta que
+el cliente entregue la información oficial (ver `DESING_SYSTEM.md` §14.6):
+
+| Archivo | Estado actual |
+| --- | --- |
+| `src/data/services.ts` | Experiencias DEMO (nombres, descripciones, duraciones, dificultades, modalidades, textos de sección ficticios; las imágenes ya son [REAL], ver §8) |
+| `src/data/destinations.ts` | Destinos DEMO ("La Selva", "Los Saltos", "El Camino Rural" + textos ficticios) |
+| Imágenes de `destinations.ts` | Reutilizan la serie `HERO/hero1-3.jpg` (temporales) |
+| `src/data/testimonials.ts` | DEMO (testimonios ficticios claramente marcados; pendiente de reemplazo por testimonios reales) |
+| `src/config/business.ts` | Contacto vacío (`whatsapp`, `phone`, `email`, `instagram`) |
+
+> **NO reemplazar automáticamente las fichas DEMO con la información de este documento.**
+> Al recibir información oficial del cliente, actualizar únicamente los datos correspondientes,
+> manteniendo la estructura visual y los componentes salvo que exista una razón explícita para
+> modificarlos.
+
+---
+
+## 7. PROCEDIMIENTO DE ACTUALIZACIÓN FUTURA
+
+Cuando el cliente entregue información oficial:
+
+1. Contrastar con este documento y con `DESING_SYSTEM.md` §14.
+2. Actualizar únicamente los datos correspondientes en `src/data/` (o `src/config/` para
+   contacto).
+3. Eliminar los marcadores `// CONTENIDO DEMO — REEMPLAZAR CON INFORMACIÓN REAL DEL CLIENTE`.
+4. Actualizar este documento marcando lo confirmado.
+5. No modificar componentes ni estructura visual salvo que exista una razón explícita.
+
+---
+
+## 8. REGISTRO DE CONTENIDO EN LA LANDING
+
+### Ticker de actividades (bajo el Hero)
+
+| Dato | Valor |
+| --- | --- |
+| Ubicación | `src/components/sections/ActivityTicker.tsx` + datos en `src/data/activities.ts` |
+| Contenido | Kayak · Trekking · Safari Off Road · Saltos y cascadas · Observación de fauna |
+| Clasificación | **[OBSERVADA]** — extraídos de la biografía de Instagram (`INFO_REAL_OBSERVADA` §2) |
+| Estado | **PENDIENTE DE CONFIRMACIÓN** como lista/productos oficiales |
+| Reemplazo | Confirmar con el cliente la lista y los nombres comerciales exactos |
+| Nota | Es atmósfera de marca, no ficha comercial; no asumir que son productos independientes (ver §3.4–§3.7) |
+
+### Imágenes de las cards de Experiencias
+
+| Dato | Valor |
+| --- | --- |
+| Ubicación | `src/data/services.ts` |
+| Estado | **[REAL]** — fotos dedicadas del propietario (sin placeholders DEMO) |
+
+> **Actualización de contenido (fotos reales incorporadas):** las 3 imágenes de las cards ahora usan
+> las **fotos reales dedicadas** de `src/assets/EXPERIENCIAS/` (`senderismo.jpg`, `ciclismo.jpg`,
+> `avistaje.jpg`), provistas por el propietario. Se eliminaron los placeholders **DEMO**
+> (`demo-kayak.svg` y `demo-fauna.svg`) y la imagen reutilizada de Nosotros
+> (`Misiones-a-puro-trekking.webp`); por eso ya no se marca `demo: true` ni se renderiza el badge
+> "Imagen DEMO". Se mantuvieron exactamente el layout, jerarquía, textos, acentos, animaciones y
+> responsive actuales. **Se resolvió el PENDIENTE de la card `ciclismo-rural`** (ver nota abajo).
+
+Registro por card:
+
+| Card (id) | Imagen actual | Clasificación | Reemplazo |
+| --- | --- | --- | --- |
+| `senderismo-selva` | `src/assets/EXPERIENCIAS/senderismo.jpg` | [REAL] — foto dedicada del cliente (senderismo) | — |
+| `ciclismo-rural` | `src/assets/EXPERIENCIAS/ciclismo.jpg` | [REAL] — foto dedicada del cliente (ciclismo) | — |
+| `flora-fauna` | `src/assets/EXPERIENCIAS/avistaje.jpg` | [REAL] — foto dedicada del cliente (avistaje / flora y fauna) | — |
+
+> **NOTA (card `ciclismo-rural`):** **RESUELTO.** El mismatch kayak/bicicleta se resolvió al
+> incorporar la foto real `ciclismo.jpg` (bicicleta), que ahora coincide con el texto DEMO de la
+> card ("Bicicleteada por caminos rurales"). El texto de la card sigue siendo DEMO hasta que el
+> cliente entregue el material oficial (DESING_SYSTEM.md §14.6).
+
+> **Actualización de implementación (Experiencias) — sin cambios de contenido ni de assets:**
+> la sección se reimplementó para romper la grilla de 3 cards iguales (AGENTS.md §12) y pasar
+> de un catálogo a una composición de **experiencia protagonista + dos secundarias**:
+>
+> - **Protagonista** (`featured: true` en `src/data/services.ts`, actualmente "Senderismo por la
+>   selva" con la foto REAL del propietario): ocupa mayor tamaño (col-span 7), imagen vertical
+>   `aspect-[3/4]` con overlay de contenido sobre degradado `deep-earth` (numeración + nombre +
+>   duración/dificultad/modalidad + CTA).
+> - **Secundarias** (col-span 5, apiladas): imagen `aspect-[4/3]`/`aspect-[16/10]`, numeración +
+>   nombre + duración/dificultad + CTA de texto.
+> - **Texto visible reducido**: las descripciones de las cards ya no se renderizan (permanecen en
+>   `src/data/services.ts`); el texto de sección del header se conserva.
+> - **Placeholders DEMO claramente identificados**: las imágenes DEMO se marcan con `demo: true`
+>   en `src/data/services.ts` y muestran un badge visible **"Imagen DEMO"** en la UI (AGENTS.md §9).
+> - Se mantienen tokens, numeración 01/02/03 y acentos por card (nature/water/earth). Mobile-first
+>   (protagonista primero, secundarias apiladas a ancho completo).
+
+### Destinos (`#destinos`)
+
+| Dato | Valor |
+| --- | --- |
+| Ubicación | `src/components/sections/Destinations.tsx` + datos en `src/data/destinations.ts` |
+| Estado | **ESTRUCTURA REDISEÑADA** — contenidos y textos siguen DEMO (ver §6.B); imágenes reutilizan la serie `HERO/` |
+
+> **Actualización de implementación (rediseño, sin cambios de contenido ni assets):** la sección
+> se reimplementó para que **Destinos** deje de parecer una segunda versión de **Experiences** y
+> comunique **lugares / paisaje / exploración**:
+>
+> - **Fondo claro (`default`/white)** — se diferencia del cream de Experiences y rompe el bloque
+>   dark consecutivo Destinos+Nosotros (la separación con Nosotros queda por contraste de fondo).
+> - **Header apilado** (eyebrow + h2 + descripción) con **hairline de apertura**; se eliminó el
+>   patrón 7/5 del header de Experiences.
+> - **Eyebrow con acento `earth`** (tierra / caminos rurales, propio de "lugares"); "Los Saltos"
+>   conserva su acento `water` en el CTA.
+> - **Protagonista panorámica** ("La Selva", `featured`): imagen full-width `aspect-[16/9]` mobile
+>   → `21/9` desktop, overlay editorial con degradado `deep-earth`, badge "Destacado", nombre,
+>   descripción `line-clamp-2` y Button "Descubrir".
+> - **Dúo editorial escalonado** ("Los Saltos" + "El Camino Rural") en vez de cards apiladas:
+>   anchos asimétricos (`col-span-5` + `col-span-7`) con desplazamiento vertical del segundo
+>   (`lg:mt-16`).
+> - **Sin numeración 01/02/03 ni barras de acento superiores** (firma visual de Experiences).
+> - **Descripciones reducidas visualmente** con `line-clamp` (1 línea en secundarias, 2 en la
+>   protagonista); el texto permanece en el DOM (no se inventa ni modifica contenido).
+> - `loading="lazy"` + `decoding="async"` en todas las imágenes.
+>
+> > **NOTA (plan B — crop de "Los Saltos"):** el formato **retrato `3/4`** propuesto originalmente
+> > NO se aplicó porque no pudo verificarse visualmente que el recorte lateral no cortara elementos
+> > importantes de la foto (fuente 3:2). Se priorizó la calidad de la imagen y se usó el plan B:
+> > "Los Saltos" en **paisaje `4/3`** (col-span-5) y "El Camino Rural" en **paisaje `16/10`**
+> > (col-span-7, desplazado). La asimetría de anchos y el offset conservan el ritmo editorial.
+
+### Galería (`#galeria`)
+
+| Dato | Valor |
+| --- | --- |
+| Ubicación | `src/components/sections/Gallery.tsx` + datos en `src/data/gallery.ts` |
+| Estado | **[REAL]** — fotos dedicadas del propietario (sin placeholders DEMO) |
+
+> **Actualización de contenido (fotos reales incorporadas):** las 6 imágenes de la galería ahora
+> usan las **fotos reales dedicadas** de `src/assets/GALERIA/` (carpeta provista por el propietario
+> para la galería; la carpeta de origen `...\Downloads\Guia Marcio\MANDIOCA TURISMO NATURALEZA-*\Galeria`
+> está vacía: los archivos ya fueron copiados al proyecto). Se reemplazaron los **2 placeholders DEMO**
+> (kayak y flora/fauna) y las imágenes reutilizadas (serie `HERO/hero1-3.jpg` y el webp de
+> Nosotros/Experiencias) por la foto dedicada de cada categoría. **No quedan imágenes DEMO en la
+> galería.** Se mantienen el masonry, los aspect ratios, captions, categorías y el lightbox sin cambios.
+
+> **Actualización de implementación (sin cambios de contenido/assets):** la sección se reimplementó
+> como galería **masonry editorial** (1 col mobile / 2 tablet / 3 desktop) con entrada suave
+> escalonada vía **Framer Motion** al entrar en viewport, desactivada con `prefers-reduced-motion`.
+> Los datos, imágenes, captions y categorías de la galería no cambiaron (siguen siendo los
+> registrados abajo).
+
+Registro por item:
+
+| Item | Imagen actual | Clasificación | Reemplazo |
+| --- | --- | --- | --- |
+| `g-selva` | `src/assets/GALERIA/selvamisionera.jpg` | [REAL] — foto dedicada del cliente (selva) | — |
+| `g-trekking` | `src/assets/GALERIA/trekkingselva.jpg` | [REAL] — foto dedicada del cliente (trekking) | — |
+| `g-saltos` | `src/assets/GALERIA/saltosycascadas.jpg` | [REAL] — foto dedicada del cliente (saltos y cascadas) | — |
+| `g-kayak` | `src/assets/GALERIA/kayak.jpg` | [REAL] — foto dedicada del cliente (kayak/agua) | — |
+| `g-camino` | `src/assets/GALERIA/caminomisionero.jpg` | [REAL] — foto dedicada del cliente (caminos rurales) | — |
+| `g-fauna` | `src/assets/GALERIA/florayfauna.jpg` | [REAL] — foto dedicada del cliente (flora y fauna) | — |
+
+> Los captions y categorías de la galería son descriptivos de temas OBSERVADOS de Mandioca
+> (selva, agua, aventura, trekking, kayak, fauna); no son fichas comerciales.
+
+### Testimonios (`#testimonios`)
+
+| Dato | Valor |
+| --- | --- |
+| Ubicación | `src/components/sections/Testimonials.tsx` + datos en `src/data/testimonials.ts` |
+| Estado | **DEMO / PENDIENTE DE REEMPLAZO** — no existen testimonios reales aún (checklist §5) |
+
+> **Contenido DEMO:** los testimonios (nombres, lugares y frases) son **FICTICIOS** y de muestra:
+> "María" (kayak al amanecer, Buenos Aires), "Juan" (senderismo por la selva, Corrientes),
+> "Camila" (avistaje de flora y fauna, Rosario). NO presentar como opiniones reales de Mandioca.
+> Se muestra un badge "Contenido DEMO" en la sección y una nota al pie. Reemplazar por
+> testimonios reales del cliente cuando los provea (AGENTS.md §21), actualizando únicamente
+> `src/data/testimonials.ts`. La estructura (tipo `Testimonial` con `featured?`, `rating?`,
+> `image?`) ya está lista para incorporarlos.
+> **Observado (NO publicable aún):** Google Maps muestra valoración 5.0 con 21 opiniones
+> (INFO §1) — pendiente de confirmación para usar como dato de confianza.
+
+---
+
+### Pre-reserva (`#pre-reserva`)
+
+| Dato | Valor |
+| --- | --- |
+| Ubicación | `src/components/sections/PreReserva.tsx` + contenido en `src/data/preReserva.ts` |
+| Estado | **ESTRUCTURA PREPARADA** — sección CTA de cierre creada; sin datos de contacto reales aún |
+
+> **Decisión registrada:** se creó el ancla `#pre-reserva` como cierre editorial oscuro de la
+> landing (banda `deep-earth`, composición asimétrica 7/5: contenido + CTA a la izquierda y foto
+> real `src/assets/GALERIA/caminomisionero.jpg` enmarcada a la derecha). Todos los CTA que ya
+> apuntaban a `#pre-reserva` (Hero, Navbar, Experiencias, Destinos) ahora llegan a esta sección.
+>
+> **CTA preparado sin inventar datos:** el botón arma el enlace `wa.me` a partir de
+> `businessConfig.whatsapp` con mensaje precompletado (`preReservaSection.whatsappMessage`,
+> plantilla según AGENTS.md §23). Mientras el número esté vacío, el CTA apunta a `#pre-reserva`
+> y una nota al pie indica que WhatsApp y el formulario estarán disponibles próximamente.
+> Al cargar el contacto en `src/config/business.ts`, el CTA se conecta solo sin tocar el
+> componente.
+>
+> **Formulario NO implementado (a propósito):** según AGENTS.md §22/§23, cuando existan datos
+> reales se prevé un formulario de pre-reserva (nombre, WhatsApp, email, fecha, personas,
+> experiencia, destino, mensaje) que construya el mensaje y abra WhatsApp. No se implementó para
+> no inventar campos ni procesos comerciales sin la información real.
+
+---
+
+### Footer (`<footer>`)
+
+| Dato | Valor |
+| --- | --- |
+| Ubicación | `src/components/layout/Footer.tsx` + contenido en `src/data/footer.ts` |
+| Estado | **ESTRUCTURA PREPARADA** — cierre de la landing implementado; sin datos de contacto reales aún |
+
+> **Decisión registrada:** el Footer es la única pieza estructural que faltaba para cerrar la
+> landing (la página terminaba en la banda `#pre-reserva`). Sigue el fondo oscuro del cierre con
+> un divisor (`border-t warm-white/10`) para diferenciarse visualmente de la banda CTA y leerse
+> como área de utilidad (tipografía fina, densidad informativa).
+>
+> **Contenido sin inventar (AGENTS.md §24, §33):**
+> - **Marca:** logo oficial "Marca sin descriptor" en versión negativa blanca (`<Logo light />`),
+>   tagline institucional y descripción basada en AGENTS.md §1 (expediciones/excursiones con guías
+>   locales). No se agregan claims comerciales no confirmados.
+> - **Navegación:** reutiliza `navLinks` de `src/config/navigation.ts` (mismos links que el Navbar).
+> - **Contacto:** la **ubicación real** (`businessConfig.location`) se muestra siempre. WhatsApp,
+>   teléfono, email e Instagram se renderizan **solo cuando el dato esté cargado** en
+>   `src/config/business.ts` (auto-conectado, sin tocar el componente): WhatsApp vía `wa.me`
+>   (helper compartido `src/lib/whatsapp.ts`), teléfono vía `tel:`, email vía `mailto:`, Instagram
+>   vía `https://instagram.com/<handle>` (se normaliza el `@` inicial). Mientras estén vacíos, la
+>   columna muestra únicamente la ubicación.
+> - **Barra inferior:** copyright con año dinámico + nombre oficial + enlace "Volver arriba" a
+>   `#inicio`.
+>
+> **Íconos de marcas:** como `lucide-react` v1.x ya no exporta íconos de marcas, WhatsApp e
+> Instagram usan glyphs SVG oficiales (Simple Icons) en `src/components/ui/WhatsAppIcon.tsx` y
+> `src/components/ui/InstagramIcon.tsx`.
+
+### Botón WhatsApp flotante
+
+| Dato | Valor |
+| --- | --- |
+| Ubicación | `src/components/layout/WhatsAppButton.tsx` |
+| Estado | **PREPARADO (inactivo hasta cargar el número)** |
+
+> **Decisión registrada:** botón circular fijo (abajo-derecha, `z-40` — debajo del Navbar `z-50`),
+> color de marca del canal WhatsApp (`--color-whatsapp`, fuera de la paleta Mandioca, token
+> centralizado en `src/index.css`), con `aria-label`, `title` y foco visible. Respeta
+> DESING_SYSTEM.md §9 (visible, discreto, accesible, fijo; no tapa CTA). **No se renderiza**
+> mientras `businessConfig.whatsapp` esté vacío, para no mostrar un botón sin destino (mismo
+> helper compartido `src/lib/whatsapp.ts` con el mensaje de `footerContent.whatsappMessage`). Al
+> cargar el número se activa solo.
+
+> **Nota de arquitectura:** el enlace de WhatsApp se centralizó en `src/lib/whatsapp.ts`
+> (`buildWhatsAppLink`), usado por `PreReserva` (con fallback `#pre-reserva`), el Footer y el
+> botón flotante, eliminando la lógica duplicada.
+
+### Ajustes de bajo riesgo (accesibilidad · SEO · legibilidad)
+
+> **Registro (sin cambios de contenido, diseño, identidad ni tokens):**
+>
+> - **Hero** (`src/components/sections/Hero.tsx`): la franja inferior "Explorá + ⌄" pasó de `<p>`
+>   decorativo a `<a href="#experiencias">` (mismo aspecto visual; affordance real + a11y).
+> - **Galería** (`src/components/sections/Gallery.tsx`): el lightbox ahora devuelve el foco al
+>   elemento que abrió la imagen al cerrarse (guardado en `openerRef` al abrir y restaurado en
+>   `close()`). Sin cambios de comportamiento visual, masonry ni animaciones.
+> - **Favicon** (`index.html` + `public/favicon.png`): se usa el **asset oficial de marca**
+>   `src/assets/MANDIOCA/LOGOS_PNG/MANDIOCA_ICONO PRINCIPAL.png` (icono verde) copiado tal cual a
+>   `public/favicon.png` y enlazado con `<link rel="icon" type="image/png" href="/favicon.png" />`.
+>   Resuelve el pending de favicon eliminado; no se creó ni rediseñó ningún icono (AGENTS §10).
+> - **Contraste** (solo puntos identificados en la auditoría, con tokens existentes):
+>   `text-warm-white/60 → /70` en el supportText de PreReserva; `text-warm-white/70 → /75` en los
+>   highlights de About; `text-ink/70 → /75` en las metas de los testimonios (2 ocurrencias).
+>   La "barra inferior" del Footer usa `warm-white/50` (fuera del mapeo aprobado) → sin cambios.
+
+---
+
+# FIN DE INFO_REAL_OBSERVADA
