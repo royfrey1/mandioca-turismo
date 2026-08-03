@@ -523,11 +523,15 @@ Mobile:   22px – 28px
 | `src/assets/HERO/hero2.jpg` | 1920×1272 |
 | `src/assets/HERO/hero3.jpg` | 1920×1280 |
 
-### Fotografía — Nosotros
+### Fotografía — Nosotros y destinos [WEB]
 
 | Ruta | Dimensiones | Descripción |
 | --- | --- | --- |
-| `src/assets/NOSOTROS/Misiones-a-puro-trekking.webp` | 768×1216 | Personas caminando por la selva (trekking). Seleccionada por el propietario para la sección `#nosotros`. Usada en `src/components/sections/About.tsx`. Orientación vertical; se renderiza con `object-cover` en `aspect-[3/4]` para preservar la composición. |
+| `src/assets/NOSOTROS/nosotros.png` | 599×601 | Foto real del propietario para la sección `#nosotros`. Usada en `src/components/sections/About.tsx`; se renderiza con `object-cover` en `aspect-[3/4]`. |
+| `src/assets/NOSOTROS/pre.jpg` | 1206×1600 | Foto real del propietario para la sección `#pre-reserva`. Usada en `src/components/sections/PreReserva.tsx`; `aspect-square` mobile / `3/4` desktop. |
+| `src/assets/NOSOTROS/cascada.jpg` | 1200×1600 | Foto real del propietario para el destino "Los Saltos" (`src/data/destinations.ts`). Orientación vertical. |
+| `src/assets/NOSOTROS/caminorural.jpg` | 1156×1600 | Foto real del propietario para el destino "El Camino Rural" (`src/data/destinations.ts`). Orientación vertical. |
+| `src/assets/NOSOTROS/Misiones-a-puro-trekking.webp` | 768×1216 | Imagen del prototipo (personas caminando por la selva). **Ya no se usa en la landing** — reemplazada por `nosotros.png`. Se conserva el archivo. |
 
 ### Logos — PNG (web)
 
@@ -555,7 +559,8 @@ Estado real de la integración (implementado en `src/components/layout/Logo.tsx`
 - **Versión a color** (`LOGOS_PNG/LOGO SIN DESCRIPTOR.png`): se usa cuando el Navbar está sobre fondo claro (`light=false`): con scroll aplicado o con el menú móvil abierto (fondo `warm-white/90`).
 - **Versión negativa blanca** (`LOGOS_PNG/LOGO SIN DESCRIPTOR B_N.png`): se usa cuando el Navbar está sobre el Hero (`light=true`, fondo `deep-earth`).
 - **Selección por estado:** `light ? logoBlanco : logoColor` en `Logo.tsx`; el Navbar deriva `light` de `!scrolled && !menuOpen`.
-- **Tamaño de render:** `h-10` (40 px) mobile / `h-14` (56 px) desktop con `w-auto` — mantiene el aspect-ratio original, respeta la reducción mínima del manual (35 px) y no se deforma ni recolorea. (Ajuste de tamaño aplicado a Navbar y Footer; reversible.)
+- **Tamaño de render (Navbar):** `h-10` (40 px) mobile / `h-14` (56 px) desktop con `w-auto` — mantiene el aspect-ratio original, respeta la reducción mínima del manual (35 px) y no se deforma ni recolorea.
+- **Logo del Footer:** usa la **Marca principal con descriptor** en versión negativa blanca (`LOGOS_PNG/LOGO CON DESCRIPTOR B_N..png` — verificada por muestreo de píxeles: `B_N..png` = **blanco** negativo, `B_N.png` = **negro** positivo; sufijo inconsistente, ver §5.3) vía `variant="withDescriptor"` en `Logo.tsx`. Tamaño a medida del propietario: `h-[8.20rem]` mobile / `lg:h-[9.25rem]` / `2xl:h-[10.25rem]` con `w-auto`.
 
 ### Logos — JPG (documentos)
 
@@ -648,14 +653,14 @@ Mientras no existan fotografías definitivas, pueden utilizarse temporalmente **
 
 **EXPERIENCIAS** contiene actualmente contenido **DEMO**: los nombres y descripciones de las experiencias (Senderismo, Ciclismo, Flora y fauna) son DEMO y deberán reemplazarse por el material real del cliente.
 
-**DESTINOS** contiene actualmente contenido **DEMO**: los nombres "La Selva", "Los Saltos" y "El Camino Rural" son nombres **DEMO** y no deben interpretarse como nombres oficiales de destinos de Mandioca. Las fotografías utilizadas en Destinos son **assets temporales/reutilizados** y deberán reemplazarse por fotografías específicas cuando Mandioca entregue el material definitivo.
+**DESTINOS** contiene actualmente contenido **DEMO**: los nombres "La Selva", "Los Saltos" y "El Camino Rural" son nombres **DEMO** y no deben interpretarse como nombres oficiales de destinos de Mandioca. Las fotografías de "Los Saltos" y "El Camino Rural" ya son **reales** (provistas por el propietario); "La Selva" (protagonista) reutiliza la serie `HERO/` hasta que Mandioca entregue una foto dedicada.
 
 | Archivo | Contenido DEMO actual | Reemplazo |
 | --- | --- | --- |
 | `src/data/services.ts` | Sección "Experiencias": nombres, descripciones, duraciones, dificultades, modalidades y textos de la sección ficticios (las imágenes ya son [REAL] — ver `INFO` §8) | Material real de experiencias |
 | `src/data/destinations.ts` | Sección "Destinos": nombres (La Selva, Los Saltos, El Camino Rural), descripciones y textos de la sección ficticios | Destinos y fotografías definitivas |
-| Imágenes en `destinations.ts` | Reutilizan la serie `HERO/hero1-3.jpg` (temporales) | Fotografías propias de cada destino |
-| `src/config/business.ts` | `whatsapp`, `phone`, `email` e `instagram` vacíos | Datos de contacto reales |
+| Imágenes en `destinations.ts` | "La Selva" usa la serie `HERO/` (`hero2.jpg`); "Los Saltos" y "El Camino Rural" ya son [REAL] (`NOSOTROS/cascada.jpg`, `NOSOTROS/caminorural.jpg`) | Fotografía dedicada de "La Selva" |
+| `src/config/business.ts` | `whatsapp` (`54 9 3757 40-5302`) e `instagram` (`@mandioca.turismo`) cargados; `phone` y `email` vacíos | Teléfono y email comerciales |
 | `src/data/testimonials.ts` | Testimonios ficticios claramente marcados en la UI | Testimonios reales del cliente |
 
 > El contenido de `src/data/hero.ts` y la fotografía `hero1.jpg` del Hero **no** son DEMO: fueron definidos por el propietario. El CTA de las secciones DEMO (Experiencias y Destinos) dirige a `#pre-reserva`, el ancla de conversión (AGENTS.md §22), ya construida como sección de cierre (formulario pendiente de datos reales).
@@ -672,7 +677,9 @@ Mientras no existan fotografías definitivas, pueden utilizarse temporalmente **
 > distinguirlo de la banda `#pre-reserva`) y el **botón WhatsApp flotante**
 > (`src/components/layout/WhatsAppButton.tsx`). Ambos consumen `businessConfig` y el helper
 > compartido `src/lib/whatsapp.ts`: mientras el número esté vacío, el botón no se renderiza y el
-> Footer muestra solo la ubicación real; al cargar los datos de contacto se activan solos. El color
+> Footer muestra solo la ubicación real; al cargar los datos de contacto se activan solos. **Estado
+> actual: `whatsapp` e `instagram` cargados** — el botón flotante ya se renderiza (en todos los
+> viewports, `wa.me/5493757405302`) y el Footer muestra ubicación, WhatsApp e Instagram. El color
 > del botón usa el token `--color-whatsapp` (color de marca del canal, fuera de la paleta Mandioca).
 > Registro completo en `INFO_REAL_OBSERVADA.md.txt` (§8).
 
@@ -681,9 +688,10 @@ Mientras no existan fotografías definitivas, pueden utilizarse temporalmente **
 > (`default`/white, rompe el bloque dark Destinos+Nosotros), header apilado con hairline de
 > apertura, eyebrow con acento `earth`, protagonista **panorámica** (`16/9` mobile → `21/9`
 > desktop) con overlay editorial, y **dúo escalonado** asimétrico en vez de cards apiladas (sin
-> numeración ni barras de acento superiores). Sin cambios en `src/data/destinations.ts` (mismos
-> destinos, textos, imágenes y CTAs). Detalle y nota del plan B (crop de "Los Saltos") en
-> `INFO_REAL_OBSERVADA.md.txt` (§8).
+> numeración ni barras de acento superiores). Mismos destinos, textos y CTAs; **las imágenes de
+> "Los Saltos" y "El Camino Rural" se actualizaron a fotos reales del propietario**
+> (`NOSOTROS/cascada.jpg`, `NOSOTROS/caminorural.jpg`) — "La Selva" conserva `hero2.jpg`.
+> Detalle y nota del plan B (crop de "Los Saltos") en `INFO_REAL_OBSERVADA.md.txt` (§8).
 
 ## 14.7 Checklist de reemplazo antes de producción
 
