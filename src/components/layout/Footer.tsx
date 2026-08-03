@@ -78,7 +78,7 @@ export function Footer() {
               light
               loading="lazy"
               variant="withDescriptor"
-              className="h-[8.20rem] lg:h-16"
+              className="h-[8.20rem] lg:h-[9.25rem] 2xl:h-[10.25rem]"
             />
             <p className="mt-1 text-sm leading-relaxed text-warm-white/70">
               {footerContent.description}

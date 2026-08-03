@@ -4,8 +4,8 @@
 // Las imágenes reutilizan la serie `HERO/` hasta que el cliente provea
 // fotografías reales de cada destino.
 import imgSelva from '../assets/HERO/hero2.jpg'
-import imgSaltos from '../assets/HERO/hero3.jpg'
-import imgCaminoRural from '../assets/HERO/hero1.jpg'
+import imgSaltos from '../assets/NOSOTROS/cascada.jpg'
+import imgCaminoRural from '../assets/NOSOTROS/caminorural.jpg'
 
 export type DestinationAccent = 'default' | 'water'
 

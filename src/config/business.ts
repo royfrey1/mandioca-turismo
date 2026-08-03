@@ -7,7 +7,7 @@ export const businessConfig = {
   whatsapp: '54 9 3757 40-5302',
   phone: '',
   email: '',
-  instagram: '',
+  instagram: '@mandioca.turismo',
 } as const
 
 export type BusinessConfig = typeof businessConfig

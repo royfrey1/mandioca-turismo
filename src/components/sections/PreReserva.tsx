@@ -4,7 +4,7 @@ import { Container } from '../layout/Container'
 import { Button } from '../ui/Button'
 import { preReservaSection } from '../../data/preReserva'
 import { buildWhatsAppLink } from '../../lib/whatsapp'
-import preReservaImage from '../../assets/GALERIA/caminomisionero.jpg'
+import preReservaImage from '../../assets/NOSOTROS/pre.jpg'
 
 // CTA de cierre. El enlace se construye desde `businessConfig.whatsapp` (ver
 // `src/lib/whatsapp.ts`): cuando el número esté cargado abre WhatsApp con el

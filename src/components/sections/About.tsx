@@ -2,7 +2,7 @@ import { Section } from '../layout/Section'
 import { Container } from '../layout/Container'
 import { Button } from '../ui/Button'
 import { aboutSection } from '../../data/about'
-import aboutImage from '../../assets/NOSOTROS/Misiones-a-puro-trekking.webp'
+import aboutImage from '../../assets/NOSOTROS/nosotros.png'
 
 export function About() {
   return (
