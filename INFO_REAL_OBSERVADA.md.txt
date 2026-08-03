@@ -351,8 +351,8 @@ Checklist de pendientes (no inventar ninguno de estos datos):
 - Fotografías oficiales autorizadas para utilizar en la web.
 - Logo y variantes definitivas.
 - Testimonios que el cliente quiera publicar.
-- Redes sociales oficiales.
-- WhatsApp de reservas.
+- Redes sociales oficiales. **[RESUELTO — Instagram `@mandioca.turismo` cargado]**
+- WhatsApp de reservas. **[RESUELTO — número `54 9 3757 40-5302` cargado]**
 - Email comercial.
 - Dominio/sitio web definitivo.
 - Información oficial sobre cada destino.
@@ -375,9 +375,9 @@ el cliente entregue la información oficial (ver `DESING_SYSTEM.md` §14.6):
 | --- | --- |
 | `src/data/services.ts` | Experiencias DEMO (nombres, descripciones, duraciones, dificultades, modalidades, textos de sección ficticios; las imágenes ya son [REAL], ver §8) |
 | `src/data/destinations.ts` | Destinos DEMO ("La Selva", "Los Saltos", "El Camino Rural" + textos ficticios) |
-| Imágenes de `destinations.ts` | Reutilizan la serie `HERO/hero1-3.jpg` (temporales) |
+| Imágenes de `destinations.ts` | "La Selva" (protagonista) usa la serie `HERO/` (`hero2.jpg`); "Los Saltos" y "El Camino Rural" ya usan **fotos reales del propietario** (`src/assets/NOSOTROS/cascada.jpg` y `caminorural.jpg`) |
 | `src/data/testimonials.ts` | DEMO (testimonios ficticios claramente marcados; pendiente de reemplazo por testimonios reales) |
-| `src/config/business.ts` | Contacto vacío (`whatsapp`, `phone`, `email`, `instagram`) |
+| `src/config/business.ts` | Contacto parcialmente cargado: `whatsapp` (`54 9 3757 40-5302`) e `instagram` (`@mandioca.turismo`); `phone` y `email` vacíos |
 
 > **NO reemplazar automáticamente las fichas DEMO con la información de este documento.**
 > Al recibir información oficial del cliente, actualizar únicamente los datos correspondientes,
@@ -462,7 +462,7 @@ Registro por card:
 | Dato | Valor |
 | --- | --- |
 | Ubicación | `src/components/sections/Destinations.tsx` + datos en `src/data/destinations.ts` |
-| Estado | **ESTRUCTURA REDISEÑADA** — contenidos y textos siguen DEMO (ver §6.B); imágenes reutilizan la serie `HERO/` |
+| Estado | **ESTRUCTURA REDISEÑADA** — textos siguen DEMO (ver §6.B); "La Selva" usa la serie `HERO/` y "Los Saltos"/"El Camino Rural" ya usan **fotos reales** del propietario |
 
 > **Actualización de implementación (rediseño, sin cambios de contenido ni assets):** la sección
 > se reimplementó para que **Destinos** deje de parecer una segunda versión de **Experiences** y
@@ -490,6 +490,32 @@ Registro por card:
 > > importantes de la foto (fuente 3:2). Se priorizó la calidad de la imagen y se usó el plan B:
 > > "Los Saltos" en **paisaje `4/3`** (col-span-5) y "El Camino Rural" en **paisaje `16/10`**
 > > (col-span-7, desplazado). La asimetría de anchos y el offset conservan el ritmo editorial.
+
+> **Actualización de contenido (fotos reales incorporadas):** "Los Saltos" y "El Camino Rural"
+> dejaron de reutilizar la serie `HERO/` y usan **fotos reales del propietario** provistas en
+> `src/assets/NOSOTROS/` (`cascada.jpg` → Los Saltos, `caminorural.jpg` → El Camino Rural).
+> "La Selva" (protagonista) conserva `hero2.jpg` de la serie `HERO/` hasta que el propietario
+> provea una foto dedicada. No se modificaron nombres, textos ni CTAs.
+
+> **Actualización de pulido mobile (sin cambios de contenido ni assets):** composición mobile de la
+> protagonista "La Selva" ajustada para dar más protagonismo a la fotografía y quitar la sensación
+> de "card de catálogo": imagen vertical `aspect-[4/5]` (mobile) en vez de `4/3`; badge "Destacado"
+> **superpuesto sobre la imagen** (top-left, más chico) en vez de en el bloque de texto; título en
+> `text-h2` (misma jerarquía que desktop); descripción con `mt-4` y contenido con `mt-6`. En
+> secondary cards se redujo el gap `gap-12 → gap-10`. Desktop **sin cambios** (panorámica `21/9`
+> con overlay, todos los valores restaurados con `lg:`/`sm:`).
+
+### Nosotros (`#nosotros`)
+
+| Dato | Valor |
+| --- | --- |
+| Ubicación | `src/components/sections/About.tsx` |
+| Estado | **Imagen [REAL]** — foto del propietario `src/assets/NOSOTROS/nosotros.png` |
+
+> **Actualización de contenido:** la imagen de la sección pasó de
+> `Misiones-a-puro-trekking.webp` a la **foto real del propietario** `src/assets/NOSOTROS/nosotros.png`
+> (reemplaza al asset usado desde el prototipo). Se mantienen el layout, la composición 3/4, los
+> textos y el CTA sin cambios.
 
 ### Galería (`#galeria`)
 
@@ -550,19 +576,19 @@ Registro por item:
 | Dato | Valor |
 | --- | --- |
 | Ubicación | `src/components/sections/PreReserva.tsx` + contenido en `src/data/preReserva.ts` |
-| Estado | **ESTRUCTURA PREPARADA** — sección CTA de cierre creada; sin datos de contacto reales aún |
+| Estado | **ACTIVA** — WhatsApp cargado, CTA abre `wa.me`; imagen real del propietario |
 
 > **Decisión registrada:** se creó el ancla `#pre-reserva` como cierre editorial oscuro de la
 > landing (banda `deep-earth`, composición asimétrica 7/5: contenido + CTA a la izquierda y foto
-> real `src/assets/GALERIA/caminomisionero.jpg` enmarcada a la derecha). Todos los CTA que ya
+> **real del propietario** `src/assets/NOSOTROS/pre.jpg` enmarcada a la derecha — en mobile la foto
+> se muestra en `aspect-square` y en desktop `3/4`). Todos los CTA que ya
 > apuntaban a `#pre-reserva` (Hero, Navbar, Experiencias, Destinos) ahora llegan a esta sección.
 >
-> **CTA preparado sin inventar datos:** el botón arma el enlace `wa.me` a partir de
-> `businessConfig.whatsapp` con mensaje precompletado (`preReservaSection.whatsappMessage`,
-> plantilla según AGENTS.md §23). Mientras el número esté vacío, el CTA apunta a `#pre-reserva`
-> y una nota al pie indica que WhatsApp y el formulario estarán disponibles próximamente.
-> Al cargar el contacto en `src/config/business.ts`, el CTA se conecta solo sin tocar el
-> componente.
+> **CTA conectado:** el botón arma el enlace `wa.me` a partir de
+> `businessConfig.whatsapp` (`54 9 3757 40-5302` → `https://wa.me/5493757405302`) con mensaje
+> precompletado (`preReservaSection.whatsappMessage`, plantilla según AGENTS.md §23). La nota al
+> pie indica que WhatsApp y el formulario estarán disponibles próximamente. Al cargarse el número,
+> el CTA se conectó solo sin tocar el componente.
 >
 > **Formulario NO implementado (a propósito):** según AGENTS.md §22/§23, cuando existan datos
 > reales se prevé un formulario de pre-reserva (nombre, WhatsApp, email, fecha, personas,
@@ -576,7 +602,7 @@ Registro por item:
 | Dato | Valor |
 | --- | --- |
 | Ubicación | `src/components/layout/Footer.tsx` + contenido en `src/data/footer.ts` |
-| Estado | **ESTRUCTURA PREPARADA** — cierre de la landing implementado; sin datos de contacto reales aún |
+| Estado | **ESTRUCTURA PREPARADA** — WhatsApp e Instagram cargados; phone y email vacíos |
 
 > **Decisión registrada:** el Footer es la única pieza estructural que faltaba para cerrar la
 > landing (la página terminaba en la banda `#pre-reserva`). Sigue el fondo oscuro del cierre con
@@ -584,18 +610,25 @@ Registro por item:
 > como área de utilidad (tipografía fina, densidad informativa).
 >
 > **Contenido sin inventar (AGENTS.md §24, §33):**
-> - **Marca:** logo oficial "Marca sin descriptor" en versión negativa blanca (`<Logo light />`),
->   tagline institucional y descripción basada en AGENTS.md §1 (expediciones/excursiones con guías
->   locales). No se agregan claims comerciales no confirmados.
+> - **Marca:** logo oficial **"Marca principal con descriptor"** en versión negativa blanca
+>   (`src/assets/MANDIOCA/LOGOS_PNG/LOGO CON DESCRIPTOR B_N..png`, verificada por muestreo de
+>   píxeles: el archivo `B_N..png` es el blanco y `B_N.png` el negro — sufijo inconsistente,
+>   DESING_SYSTEM.md §5.3), vía `<Logo light variant="withDescriptor" />`. Tamaño a medida del
+>   propietario: `h-[8.20rem]` mobile / `lg:h-[9.25rem]` / `2xl:h-[10.25rem]`, `w-auto`
+>   (proporciones originales). Tagline institucional y descripción basada en AGENTS.md §1.
+>   No se agregan claims comerciales no confirmados.
 > - **Navegación:** reutiliza `navLinks` de `src/config/navigation.ts` (mismos links que el Navbar).
 > - **Contacto:** la **ubicación real** (`businessConfig.location`) se muestra siempre. WhatsApp,
 >   teléfono, email e Instagram se renderizan **solo cuando el dato esté cargado** en
 >   `src/config/business.ts` (auto-conectado, sin tocar el componente): WhatsApp vía `wa.me`
 >   (helper compartido `src/lib/whatsapp.ts`), teléfono vía `tel:`, email vía `mailto:`, Instagram
->   vía `https://instagram.com/<handle>` (se normaliza el `@` inicial). Mientras estén vacíos, la
->   columna muestra únicamente la ubicación.
+>   vía `https://instagram.com/<handle>` (se normaliza el `@` inicial). **Hoy están cargados
+>   `whatsapp` e `instagram` (`@mandioca.turismo`), por lo que la columna muestra ubicación,
+>   WhatsApp e Instagram.**
 > - **Barra inferior:** copyright con año dinámico + nombre oficial + enlace "Volver arriba" a
->   `#inicio`.
+>   `#inicio`. En mobile, "Volver arriba" se refuerza visualmente (texto `text-sm`/`font-semibold`,
+>   icono `h-4 w-4` con animación en hover, `gap-2` y área táctil `py-3`); tablet/desktop
+>   conservan el estilo original (resets `sm:`).
 >
 > **Íconos de marcas:** como `lucide-react` v1.x ya no exporta íconos de marcas, WhatsApp e
 > Instagram usan glyphs SVG oficiales (Simple Icons) en `src/components/ui/WhatsAppIcon.tsx` y
@@ -606,15 +639,15 @@ Registro por item:
 | Dato | Valor |
 | --- | --- |
 | Ubicación | `src/components/layout/WhatsAppButton.tsx` |
-| Estado | **PREPARADO (inactivo hasta cargar el número)** |
+| Estado | **ACTIVO** — número cargado, se renderiza en todos los viewports |
 
 > **Decisión registrada:** botón circular fijo (abajo-derecha, `z-40` — debajo del Navbar `z-50`),
 > color de marca del canal WhatsApp (`--color-whatsapp`, fuera de la paleta Mandioca, token
 > centralizado en `src/index.css`), con `aria-label`, `title` y foco visible. Respeta
-> DESING_SYSTEM.md §9 (visible, discreto, accesible, fijo; no tapa CTA). **No se renderiza**
-> mientras `businessConfig.whatsapp` esté vacío, para no mostrar un botón sin destino (mismo
-> helper compartido `src/lib/whatsapp.ts` con el mensaje de `footerContent.whatsappMessage`). Al
-> cargar el número se activa solo.
+> DESING_SYSTEM.md §9 (visible, discreto, accesible, fijo; no tapa CTA). Al cargar
+> `businessConfig.whatsapp` (`54 9 3757 40-5302`) el botón **se activó solo** con el enlace
+> `https://wa.me/5493757405302` (helper compartido `src/lib/whatsapp.ts` con el mensaje de
+> `footerContent.whatsappMessage`), sin tocar el componente.
 
 > **Nota de arquitectura:** el enlace de WhatsApp se centralizó en `src/lib/whatsapp.ts`
 > (`buildWhatsAppLink`), usado por `PreReserva` (con fallback `#pre-reserva`), el Footer y el
