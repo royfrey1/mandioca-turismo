@@ -2,8 +2,9 @@ import { Section } from '../layout/Section'
 import { Container } from '../layout/Container'
 import { Button } from '../ui/Button'
 import { aboutSection } from '../../data/about'
-import marcioImage from '../../assets/NOSOTROS/Marcio.png'
+import marcioImage from '../../assets/NOSOTROS/Marcio.jpg'
 import rastroActivo from '../../assets/NOSOTROS/sello-rastro-1-300x249.png'
+import selvaMisionera from '../../assets/NOSOTROS/Selva Misionera - Sello.png'
 
 export function About() {
   const { mandioca, marcio, cta } = aboutSection
@@ -53,7 +54,7 @@ export function About() {
               </Button>
             </div>
 
-            <div className="mt-12 border-t border-warm-white/10 pt-22">
+            <div className="mt-12 border-t border-warm-white/10 pt-12">
               <div className="flex items-start gap-8">
                 <img
                   src={rastroActivo}
@@ -71,6 +72,32 @@ export function About() {
                   <p className="mt-1 text-[13px] leading-snug text-warm-white/55">
                     Una acreditación vinculada a la actividad de turismo
                     activo.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-12 border-t border-warm-white/10 pt-12">
+              <div className="flex items-start gap-6 sm:gap-8">
+                <img
+                  src={selvaMisionera}
+                  alt="Selva Misionera — una de las 7 Maravillas Naturales de la Argentina"
+                  loading="lazy"
+                  decoding="async"
+                  className="lg:mt-0 md:mt-0 sm:mt-0 mt-12 aspect-square h-auto w-[min(100%,9rem)] shrink-0 self-start object-contain sm:w-[min(100%,9rem)]"
+                />
+                <div className="min-w-0">
+                  <p className="pt-4 text-xs font-semibold uppercase tracking-[0.16em] text-warm-white/90">
+                    Selva Misionera
+                  </p>
+                  <p className="mt-1 text-sm font-medium text-warm-white/80">
+                    Una de las 7 Maravillas Naturales de la Argentina.
+                  </p>
+                  <p className="mt-2 text-[10px] leading-snug text-warm-white/55">
+                    La Selva Misionera es parte de la Selva Paranaense, uno de
+                    los territorios de mayor biodiversidad de Argentina. Es el
+                    entorno natural que atraviesa muchas de las experiencias
+                    que proponemos en Misiones.
                   </p>
                 </div>
               </div>

@@ -1,21 +1,18 @@
-// CONTENIDO DEMO — REEMPLAZAR CON INFORMACIÓN REAL DEL CLIENTE
-// Los textos (nombres, descripciones, duraciones, dificultades, modalidades y
-// textos de la sección) son FICTICIOS y de muestra. No presentar como
-// información oficial de Mandioca.
-// IMÁGENES [REAL]:
-//   - Senderismo: `src/assets/EXPERIENCIAS/senderismo.jpg`
-//   - Ciclismo:   `src/assets/EXPERIENCIAS/ciclismo.jpg`
-//   - Flora y fauna: `src/assets/EXPERIENCIAS/avistaje.jpg`
-//   Fotos reales del propietario (carpeta EXPERIENCIAS/). Ya no hay placeholders DEMO.
-//   La experiencia protagonista se marca con `featured: true` (mismo patrón que destinos).
-//   Registrado en INFO_REAL_OBSERVADA.md.txt (§8).
+// EXPERIENCIAS — Las 3 experiencias principales de Mandioca.
+// IMÁGENES [REAL] (carpeta `src/assets/EXPERIENCIAS/`):
+//   - Senderismo:             `senderismo.jpg`
+//   - Saltos y cascadas:      `saltos.jpg`
+//   - Kayak:                  `kayak.jpg`
+// Duración, dificultad y modalidad: NO confirmadas por el cliente → "A coordinar"
+// (no se inventan datos comerciales). Registrar manualmente cuando se confirmen.
 import imgSenderismo from '../assets/EXPERIENCIAS/senderismo.jpg'
-import imgCiclismo from '../assets/EXPERIENCIAS/ciclismo.jpg'
-import imgAvistaje from '../assets/EXPERIENCIAS/avistaje.jpg'
+import imgSaltos from '../assets/EXPERIENCIAS/saltos.jpg'
+import imgKayak from '../assets/EXPERIENCIAS/kayak.jpg'
 
 export type ActivityId =
   | 'senderismo'
   | 'kayakismo'
+  | 'saltos-cascadas'
   | 'cicloturismo'
   | 'gastronomia'
   | 'turismo-rural'
@@ -25,7 +22,7 @@ export type ActivityId =
   | 'wellness'
   | 'luna-llena'
 
-export type Difficulty = 'Baja' | 'Media' | 'Alta'
+export type Difficulty = 'Baja' | 'Media' | 'Alta' | 'A coordinar'
 
 export type ExperienceAccent = 'nature' | 'water' | 'earth'
 
@@ -63,46 +60,46 @@ export const experiencesSection: ExperiencesSectionContent = {
 
 export const experiences: Experience[] = [
   {
-    id: 'senderismo-selva',
-    name: 'Senderismo por la selva',
+    id: 'senderismo',
+    name: 'Senderismo',
     activity: 'Senderismo',
     activityId: 'senderismo',
     accent: 'nature',
     description:
-      'Recorrido guiado por senderos de la selva para conocer la vegetación nativa y los sonidos del monte misionero.',
-    duration: 'Medio día',
-    difficulty: 'Media',
+      'Excursiones guiadas por senderos de la selva para conectar con la vegetación nativa y los sonidos del monte misionero.',
+    duration: 'A coordinar',
+    difficulty: 'A coordinar',
     modality: 'Con guía local',
     image: imgSenderismo,
     featured: true,
     cta: { label: 'Consultar', href: '#pre-reserva' },
   },
   {
-    id: 'ciclismo-rural',
-    name: 'Bicicleteada por caminos rurales',
-    activity: 'Cicloturismo',
-    activityId: 'cicloturismo',
+    id: 'saltos-cascadas',
+    name: 'Saltos y cascadas de Misiones',
+    activity: 'Saltos y cascadas',
+    activityId: 'saltos-cascadas',
     accent: 'water',
     description:
-      'Salida en bicicleta por caminos rurales y senderos de la zona, ideal para conectar con la naturaleza.',
-    duration: 'Día completo',
-    difficulty: 'Media',
-    modality: 'Grupos reducidos',
-    image: imgCiclismo,
+      'Recorridos para descubrir saltos y cascadas en los entornos naturales de la provincia.',
+    duration: 'A coordinar',
+    difficulty: 'A coordinar',
+    modality: 'Con guía local',
+    image: imgSaltos,
     cta: { label: 'Consultar', href: '#pre-reserva' },
   },
   {
-    id: 'flora-fauna',
-    name: 'Avistaje de flora y fauna nativa',
-    activity: 'Flora y fauna',
-    activityId: 'flora-fauna',
-    accent: 'earth',
+    id: 'kayak',
+    name: 'Kayak',
+    activity: 'Kayak',
+    activityId: 'kayakismo',
+    accent: 'water',
     description:
-      'Excursión de observación guiada para reconocer especies de plantas y animales del entorno misionero.',
-    duration: 'Medio día',
-    difficulty: 'Baja',
+      'Salidas de kayak por ríos y arroyos para explorar los paisajes de Misiones desde el agua.',
+    duration: 'A coordinar',
+    difficulty: 'A coordinar',
     modality: 'Con guía local',
-    image: imgAvistaje,
+    image: imgKayak,
     cta: { label: 'Consultar', href: '#pre-reserva' },
   },
 ]

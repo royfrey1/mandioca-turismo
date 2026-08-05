@@ -1,26 +1,69 @@
-import { ChevronDown } from 'lucide-react'
+import { ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react'
+import { motion, useReducedMotion } from 'framer-motion'
 import { Container } from '../layout/Container'
 import { Button } from '../ui/Button'
-import { heroContent } from '../../data/hero'
+import { heroContent, heroSlides } from '../../data/hero'
 import { businessConfig } from '../../config/business'
-import heroImage from '../../assets/HERO/hero1.jpg'
+import { useHeroCarousel } from '../../hooks/useHeroCarousel'
+
+const AUTOPLAY_MS = 6000
 
 export function Hero() {
+  const reducedMotion = useReducedMotion()
+
+  const { index, play, pause, previous, next } = useHeroCarousel({
+    slideCount: heroSlides.length,
+    intervalMs: AUTOPLAY_MS,
+    reducedMotion: !!reducedMotion,
+  })
+
   return (
     <section
       id="inicio"
       className="relative flex min-h-svh items-center overflow-hidden bg-deep-earth"
+      onPointerEnter={pause}
+      onPointerLeave={play}
+      onFocus={pause}
+      onBlur={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget as Node)) play()
+      }}
     >
-      {/* Fotografía protagonista */}
+      {/* Carrusel de fotografías (decorativo). Todas las capas permanecen montadas
+          y superpuestas: la activa en opacity 1 y las demás en 0. Al cambiar, la
+          saliente va 1→0 mientras la entrante va 0→1 (crossfade real). Nunca queda
+          un frame sin imagen visible. */}
       <div aria-hidden="true" className="absolute inset-0">
-        <img
-          src={heroImage}
-          alt=""
-          className="h-full w-full object-cover"
-          loading="eager"
-          decoding="async"
-          fetchPriority="high"
-        />
+        {heroSlides.map((slide, i) => {
+          const isActive = i === index
+          return (
+            <motion.img
+              key={i}
+              src={slide.image}
+              alt=""
+              loading="eager"
+              decoding="async"
+              fetchPriority={i === 0 && isActive ? 'high' : undefined}
+              initial={false}
+              animate={{
+                opacity: isActive ? 1 : 0,
+                scale: reducedMotion ? 1 : isActive ? 1.06 : 1,
+              }}
+              transition={
+                isActive
+                  ? {
+                      opacity: { duration: 1.1, ease: 'easeInOut' },
+                      scale: { duration: AUTOPLAY_MS / 1000, ease: 'linear' },
+                    }
+                  : {
+                      opacity: { duration: 1.1, ease: 'easeInOut' },
+                      scale: { duration: 1.1, ease: 'easeInOut' },
+                    }
+              }
+              className="absolute inset-0 h-full w-full object-cover"
+              style={{ objectPosition: slide.objectPosition ?? 'center' }}
+            />
+          )
+        })}
       </div>
 
       {/* Overlays sutiles para legibilidad: blend del navbar (superior), contenido (izquierda) y strip inferior */}
@@ -36,6 +79,24 @@ export function Hero() {
         aria-hidden="true"
         className="absolute inset-x-0 bottom-0 h-40 bg-linear-to-t from-deep-earth/80 to-transparent"
       />
+
+      {/* Flechas de navegación */}
+      <button
+        type="button"
+        aria-label="Imagen anterior"
+        onClick={previous}
+        className="absolute left-3 top-1/2 z-30 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-warm-white/15 bg-deep-earth/10 text-warm-white opacity-60 backdrop-blur-sm transition-colors duration-300 hover:bg-warm-white/15 hover:opacity-90 focus-visible:outline-warm-white lg:left-6 lg:h-9 lg:w-9"
+      >
+        <ChevronLeft className="h-[18px] w-[18px]" aria-hidden="true" strokeWidth={1.75} />
+      </button>
+      <button
+        type="button"
+        aria-label="Imagen siguiente"
+        onClick={next}
+        className="absolute right-3 top-1/2 z-30 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-warm-white/15 bg-deep-earth/10 text-warm-white opacity-60 backdrop-blur-sm transition-colors duration-300 hover:bg-warm-white/15 hover:opacity-90 focus-visible:outline-warm-white lg:right-6 lg:h-9 lg:w-9"
+      >
+        <ChevronRight className="h-[18px] w-[18px]" aria-hidden="true" strokeWidth={1.75} />
+      </button>
 
       <Container className="relative pt-20 pb-24 sm:pt-24 lg:pt-44 lg:pb-44">
         <div className="w-full max-w-2xl">

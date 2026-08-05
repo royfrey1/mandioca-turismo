@@ -21,8 +21,11 @@ const aspectClasses: Record<GalleryAspect, string> = {
 export function Gallery() {
   const reduceMotion = useReducedMotion()
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
+  const [showAll, setShowAll] = useState(false)
   const closeButtonRef = useRef<HTMLButtonElement>(null)
   const openerRef = useRef<HTMLElement | null>(null)
+
+  const items = showAll ? gallery : gallery.slice(0, 6)
 
   const selected = selectedIndex !== null ? gallery[selectedIndex] : null
   const open = (index: number) => {
@@ -81,8 +84,12 @@ export function Gallery() {
           </p>
         </div>
 
-        <div className="mt-14 columns-1 gap-3 sm:columns-2 lg:mt-20 lg:columns-3 lg:gap-3">
-          {gallery.map((item, index) => (
+        <div
+          id="gallery-grid"
+          aria-live="polite"
+          className="mt-14 columns-1 gap-3 sm:columns-2 lg:mt-20 lg:columns-3 lg:gap-3"
+        >
+          {items.map((item, index) => (
             <motion.figure
               key={item.id}
               initial={reduceMotion ? undefined : { opacity: 0, y: 24 }}
@@ -128,6 +135,18 @@ export function Gallery() {
               </button>
             </motion.figure>
           ))}
+        </div>
+
+        <div className="mt-10 flex justify-center lg:mt-14">
+          <button
+            type="button"
+            onClick={() => setShowAll((current) => !current)}
+            aria-expanded={showAll}
+            aria-controls="gallery-grid"
+            className="inline-flex items-center gap-2 rounded-full border border-deep-earth/30 px-6 py-3 font-sans text-sm font-semibold text-deep-earth transition-colors duration-200 hover:border-deep-earth hover:bg-deep-earth/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+          >
+            {showAll ? 'Mostrar menos' : 'Explorar toda la galería'}
+          </button>
         </div>
       </Container>
 

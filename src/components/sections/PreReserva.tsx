@@ -104,9 +104,9 @@ export function PreReserva() {
   // ——— Construcción del mensaje ———
   const buildMessage = (): string => {
     const lines: string[] = [
-      'Hola Mandioca 👋',
+      'Hola Mandioca',
       '',
-      'Me gustaría hacer una experiencia en Misiones.',
+      'Me gustaría hacer una pre-reserva de una excursión en Misiones.',
       '',
       `Nombre: ${name.trim()}`,
       `WhatsApp: ${whatsapp.trim()}`,
@@ -356,7 +356,7 @@ export function PreReserva() {
               <button
                 type="submit"
                 disabled={sending}
-                className="inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-primary px-8 py-4 text-base font-semibold text-deep-earth transition-colors duration-200 hover:bg-earth focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:pointer-events-none disabled:opacity-70"
+                className="cursor-pointer inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-primary px-8 py-4 text-base font-semibold text-deep-earth transition-colors duration-200 hover:bg-earth focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:pointer-events-none disabled:opacity-70"
               >
                 <Send className="h-4 w-4" aria-hidden="true" />
                 {sending
