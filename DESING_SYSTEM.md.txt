@@ -529,8 +529,8 @@ Mobile:   22px – 28px
 | --- | --- | --- |
 | `src/assets/NOSOTROS/nosotros.png` | 599×601 | Foto real del propietario para la sección `#nosotros`. Usada en `src/components/sections/About.tsx`; se renderiza con `object-cover` en `aspect-[3/4]`. |
 | `src/assets/NOSOTROS/pre.jpg` | 1206×1600 | Foto real del propietario para la sección `#pre-reserva`. Usada en `src/components/sections/PreReserva.tsx`; `aspect-square` mobile / `3/4` desktop. |
-| `src/assets/NOSOTROS/cascada.jpg` | 1200×1600 | Foto real del propietario para el destino "Los Saltos" (`src/data/destinations.ts`). Orientación vertical. |
-| `src/assets/NOSOTROS/caminorural.jpg` | 1156×1600 | Foto real del propietario para el destino "El Camino Rural" (`src/data/destinations.ts`). Orientación vertical. |
+| `src/assets/NOSOTROS/cascada.jpg` | 1200×1600 | Foto real del propietario (cascada). **Ya no se usa en la landing** — la sección "Explorá Misiones" no muestra fotos por decisión del propietario (ver §14.6). Se conserva el archivo. |
+| `src/assets/NOSOTROS/caminorural.jpg` | 1156×1600 | Foto real del propietario (camino rural). **Ya no se usa en la landing** — ídem `cascada.jpg`. Se conserva el archivo. |
 | `src/assets/NOSOTROS/Misiones-a-puro-trekking.webp` | 768×1216 | Imagen del prototipo (personas caminando por la selva). **Ya no se usa en la landing** — reemplazada por `nosotros.png`. Se conserva el archivo. |
 
 ### Logos — PNG (web)
@@ -653,13 +653,21 @@ Mientras no existan fotografías definitivas, pueden utilizarse temporalmente **
 
 **EXPERIENCIAS** contiene actualmente contenido **DEMO**: los nombres y descripciones de las experiencias (Senderismo, Ciclismo, Flora y fauna) son DEMO y deberán reemplazarse por el material real del cliente.
 
-**DESTINOS** contiene actualmente contenido **DEMO**: los nombres "La Selva", "Los Saltos" y "El Camino Rural" son nombres **DEMO** y no deben interpretarse como nombres oficiales de destinos de Mandioca. Las fotografías de "Los Saltos" y "El Camino Rural" ya son **reales** (provistas por el propietario); "La Selva" (protagonista) reutiliza la serie `HERO/` hasta que Mandioca entregue una foto dedicada.
+**EXPLORÁ MISIONES** (antes "Destinos", `#destinos`) se reconstruyó con contenido **REAL del PDF**
+del propietario **"Copia de Actividades Mandioca para Ysyry.pdf"**: destinos **Eldorado**,
+**Andresito**, **San Pedro** y **Saltos y Cascadas**, con actividades, modalidades y descripciones
+oficiales. La sección interactiva (mapa real del propietario + panel sincronizado) **no usa
+contenido DEMO**. El mapa usa el asset **`src/assets/MAPA/mapa.jpg`** (433×850, color) vía
+`misionesMap` (`source: 'asset'`); los marcadores se posicionan con `map.real` (píxeles del asset)
+sobre la ubicación geográfica de cada destino (derivada de la silueta + geografía real, PENDIENTE
+verificación visual del propietario). Quedan **PENDIENTES**: distancias y tiempos de viaje desde
+Eldorado y fotografías dedicadas por destino (por decisión el panel no muestra fotos) — registro
+en `INFO_REAL_OBSERVADA` §8.
 
 | Archivo | Contenido DEMO actual | Reemplazo |
 | --- | --- | --- |
 | `src/data/services.ts` | Sección "Experiencias": nombres, descripciones, duraciones, dificultades, modalidades y textos de la sección ficticios (las imágenes ya son [REAL] — ver `INFO` §8) | Material real de experiencias |
-| `src/data/destinations.ts` | Sección "Destinos": nombres (La Selva, Los Saltos, El Camino Rural), descripciones y textos de la sección ficticios | Destinos y fotografías definitivas |
-| Imágenes en `destinations.ts` | "La Selva" usa la serie `HERO/` (`hero2.jpg`); "Los Saltos" y "El Camino Rural" ya son [REAL] (`NOSOTROS/cascada.jpg`, `NOSOTROS/caminorural.jpg`) | Fotografía dedicada de "La Selva" |
+| `src/data/destinations.ts` | **[RESUELTO — sección "Explorá Misiones"]** contenido REAL del PDF del propietario (Eldorado, Andresito, San Pedro, Saltos y Cascadas) + mapa real `mapa.jpg` activado (`misionesMap`) y posiciones `map.real` de marcadores. PENDIENTE: distancias/tiempos desde Eldorado, fotos dedicadas, verificación visual de marcadores | Confirmar datos pendientes con el propietario |
 | `src/config/business.ts` | `whatsapp` (`54 9 3757 40-5302`) e `instagram` (`@mandioca.turismo`) cargados; `phone` y `email` vacíos | Teléfono y email comerciales |
 | `src/data/testimonials.ts` | Testimonios ficticios claramente marcados en la UI | Testimonios reales del cliente |
 
@@ -683,15 +691,17 @@ Mientras no existan fotografías definitivas, pueden utilizarse temporalmente **
 > del botón usa el token `--color-whatsapp` (color de marca del canal, fuera de la paleta Mandioca).
 > Registro completo en `INFO_REAL_OBSERVADA.md.txt` (§8).
 
-> **Actualización de implementación (Destinos):** la sección se reimplementó para **no parecer una
-> segunda versión de Experiences** y comunicar lugares/paisaje/exploración: fondo claro
-> (`default`/white, rompe el bloque dark Destinos+Nosotros), header apilado con hairline de
-> apertura, eyebrow con acento `earth`, protagonista **panorámica** (`16/9` mobile → `21/9`
-> desktop) con overlay editorial, y **dúo escalonado** asimétrico en vez de cards apiladas (sin
-> numeración ni barras de acento superiores). Mismos destinos, textos y CTAs; **las imágenes de
-> "Los Saltos" y "El Camino Rural" se actualizaron a fotos reales del propietario**
-> (`NOSOTROS/cascada.jpg`, `NOSOTROS/caminorural.jpg`) — "La Selva" conserva `hero2.jpg`.
-> Detalle y nota del plan B (crop de "Los Saltos") en `INFO_REAL_OBSERVADA.md.txt` (§8).
+> **Actualización de implementación (Explorá Misiones):** la sección se reimplementó como
+> **mapa real del propietario + panel sincronizado** para comunicar el **área de operación** de
+> Mandioca (base en Eldorado, desplazamiento por distintos puntos de la provincia) y reemplazar el
+> catálogo DEMO anterior. Composición desktop `5/12` mapa + `7/12` panel (mapa sticky); mobile con
+> pills horizontales táctiles (≥44px) + mapa + panel. El fondo del mapa es el asset
+> `src/assets/MAPA/mapa.jpg` (433×850, `misionesMap.source === 'asset'`); el contenedor mantiene
+> el mismo ratio (`aspect-[433/850]`) para no deformar la imagen y los marcadores se posicionan con
+> `map.real` (píxeles del asset). Interacción con marcadores `<button>` accesibles (`aria-pressed`,
+> foco visible), ruta punteada Eldorado → destino seleccionado y panel `aria-live="polite"`;
+> transiciones con Framer Motion respetando `prefers-reduced-motion`. Contenido real del PDF del
+> propietario y registro completo en `INFO_REAL_OBSERVADA.md.txt` (§8).
 
 ## 14.7 Checklist de reemplazo antes de producción
 

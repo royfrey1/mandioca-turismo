@@ -1,15 +1,29 @@
-// SECCIÓN NOSOTROS — CONTENIDO [OBSERVADA]
-// Los textos de esta sección se basan en información observada en los canales
-// públicos de Mandioca (biografía y publicaciones de @mandioca.turismo), según
-// `INFO_REAL_OBSERVADA.md.txt`. No son DEMO y no se inventaron datos comerciales
-// (años de experiencia, clientes, certificaciones, equipo, historia, misión).
+// SECCIÓN NOSOTROS — CONTENIDO DUAL: MANDIOCA + MARCIO
+// Información respaldada por:
+// - Artículo "Mandioca, turismo en la selva" (Economis, 2025)
+// - Infotur Mintur Misiones (Leg. RA-015-Ag-Ti)
+// - Biografía pública de Instagram (@mandioca.turismo)
+// - INFO_REAL_OBSERVADA.md.txt
+// NO se inventaron datos personales, profesionales ni comerciales.
 // Si el cliente entrega textos oficiales, reemplazar únicamente estos valores.
-export type AboutSectionContent = {
+
+export type AboutMandioca = {
   eyebrow: string
   title: string
-  intro: string
-  paragraphs: string[]
+  description: string
   highlights: string[]
+}
+
+export type AboutMarcio = {
+  name: string
+  role: string
+  bio: string
+  highlights: string[]
+}
+
+export type AboutSectionContent = {
+  mandioca: AboutMandioca
+  marcio: AboutMarcio
   cta: {
     label: string
     href: string
@@ -17,15 +31,28 @@ export type AboutSectionContent = {
 }
 
 export const aboutSection: AboutSectionContent = {
-  eyebrow: 'Mandioca · Turismo de Naturaleza',
-  title: 'Vivir Misiones no es verla. Es sentirla.',
-  intro:
-    'Una guía de turismo con base en Eldorado que acompaña a descubrir la selva misionera, sus ríos y su cultura.',
-  paragraphs: [
-    'Mandioca propone experiencias de naturaleza y aventura: kayak por ríos y arroyos, senderismo por senderos de tierra colorada, observación de fauna y recorridos hacia saltos y cascadas.',
-    'Cada salida se vive con un guía local que conoce el territorio, su gente y sus sabores. Cultura y gastronomía regional, naturaleza y conservación, en experiencias pensadas para conectar con el territorio.',
-  ],
-  highlights: ['Selva misionera', 'Ríos y tierra colorada', 'Cultura y sabores regionales'],
+  mandioca: {
+    eyebrow: 'Quienes somos',
+    title: 'Turismo de naturaleza en Misiones.',
+    description:
+      'Mandioca es una agencia de turismo de naturaleza con base en Eldorado, Misiones. Propone experiencias de aventura y descubrimiento en la selva misionera: kayak por ríos y arroyos, senderismo por caminos de tierra colorada, observación de fauna y recorridos hacia saltos y cascadas. Cada salida se adapta a los intereses y el ritmo de quien viaja.',
+    highlights: [
+      'Excursiones personalizadas',
+      'Grupos reducidos',
+      'Turismo de bajo impacto',
+      'Guía local',
+    ],
+  },
+  marcio: {
+    name: 'Marcio Germán Antunez',
+    role: 'Guía de turismo y fundador',
+    bio: 'Guardaparque en el Parque Nacional Iguazú, Marcio fundó Mandioca para ofrecer turismo de naturaleza con experiencias personalizadas en la selva misionera. Socorrista WRF en ambientes naturales, rurales y agrestes, combatiente en Incendios forestales, certificación de Kayak (ACA nivel 2).',
+    highlights: [
+      'Guardaparque Nacional',
+      'Kayak de travesía',
+      'Experiencias para sentir',
+    ],
+  },
   cta: {
     label: 'Conocé nuestras experiencias',
     href: '#experiencias',

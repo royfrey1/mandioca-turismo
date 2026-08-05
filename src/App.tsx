@@ -5,10 +5,11 @@ import { WhatsAppButton } from './components/layout/WhatsAppButton'
 import { Hero } from './components/sections/Hero'
 import { ActivityTicker } from './components/sections/ActivityTicker'
 import { Experiences } from './components/sections/Experiences'
-import { Destinations } from './components/sections/Destinations'
+import { ExplorarMisiones } from './components/sections/ExplorarMisiones'
 import { About } from './components/sections/About'
 import { Testimonials } from './components/sections/Testimonials'
 import { PreReserva } from './components/sections/PreReserva'
+import { Video } from './components/sections/Video'
 import { Section } from './components/layout/Section'
 import { Container } from './components/layout/Container'
 import { cn } from './lib/cn'
@@ -52,11 +53,12 @@ function App() {
         <Hero />
         <ActivityTicker />
         <Experiences />
-        <Destinations />
+        <ExplorarMisiones />
         <About />
         <Suspense fallback={<GalleryFallback />}>
           <Gallery />
         </Suspense>
+        <Video />
         <Testimonials />
         <PreReserva />
       </main>

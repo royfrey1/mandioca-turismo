@@ -374,8 +374,8 @@ el cliente entregue la información oficial (ver `DESING_SYSTEM.md` §14.6):
 | Archivo | Estado actual |
 | --- | --- |
 | `src/data/services.ts` | Experiencias DEMO (nombres, descripciones, duraciones, dificultades, modalidades, textos de sección ficticios; las imágenes ya son [REAL], ver §8) |
-| `src/data/destinations.ts` | Destinos DEMO ("La Selva", "Los Saltos", "El Camino Rural" + textos ficticios) |
-| Imágenes de `destinations.ts` | "La Selva" (protagonista) usa la serie `HERO/` (`hero2.jpg`); "Los Saltos" y "El Camino Rural" ya usan **fotos reales del propietario** (`src/assets/NOSOTROS/cascada.jpg` y `caminorural.jpg`) |
+| `src/data/destinations.ts` | **Explorá Misiones** — contenido REAL del PDF del propietario ("Copia de Actividades Mandioca para Ysyry.pdf"): destinos Eldorado, Andresito, San Pedro y Saltos y Cascadas con actividades, modalidades y descripciones oficiales. Distancias/tiempos desde Eldorado en `null` (TBD) |
+| Imágenes de `destinations.ts` | **Sin imágenes** — por decisión del propietario el panel no muestra fotos (foco en mapa + destino + actividades); las fotos dedicadas por destino se incorporarán cuando el propietario las provea |
 | `src/data/testimonials.ts` | DEMO (testimonios ficticios claramente marcados; pendiente de reemplazo por testimonios reales) |
 | `src/config/business.ts` | Contacto parcialmente cargado: `whatsapp` (`54 9 3757 40-5302`) e `instagram` (`@mandioca.turismo`); `phone` y `email` vacíos |
 
@@ -457,53 +457,53 @@ Registro por card:
 > - Se mantienen tokens, numeración 01/02/03 y acentos por card (nature/water/earth). Mobile-first
 >   (protagonista primero, secundarias apiladas a ancho completo).
 
-### Destinos (`#destinos`)
+### Explorá Misiones (`#destinos`)
 
 | Dato | Valor |
 | --- | --- |
-| Ubicación | `src/components/sections/Destinations.tsx` + datos en `src/data/destinations.ts` |
-| Estado | **ESTRUCTURA REDISEÑADA** — textos siguen DEMO (ver §6.B); "La Selva" usa la serie `HERO/` y "Los Saltos"/"El Camino Rural" ya usan **fotos reales** del propietario |
+| Ubicación | `src/components/sections/ExplorarMisiones.tsx` + `src/components/sections/explorar/MisionesMap.tsx` + `DestinationPanel.tsx` + datos en `src/data/destinations.ts` |
+| Contenido | **[REAL]** — destinos, actividades, modalidades y descripciones provienen exclusivamente del PDF del propietario **"Copia de Actividades Mandioca para Ysyry.pdf"** |
+| Ancla | `id="destinos"` (se mantuvo). Navbar: etiqueta **"Explorá Misiones"** → `#destinos`; Footer idem |
 
-> **Actualización de implementación (rediseño, sin cambios de contenido ni assets):** la sección
-> se reimplementó para que **Destinos** deje de parecer una segunda versión de **Experiences** y
-> comunique **lugares / paisaje / exploración**:
+> **Actualización de implementación (nueva sección "Explorá Misiones"):** reemplaza la antigua
+> sección **Destinos** (DEMO: "La Selva", "Los Saltos", "El Camino Rural") por una sección
+> interactiva que combina **destinos + área de operación**:
 >
-> - **Fondo claro (`default`/white)** — se diferencia del cream de Experiences y rompe el bloque
->   dark consecutivo Destinos+Nosotros (la separación con Nosotros queda por contraste de fondo).
-> - **Header apilado** (eyebrow + h2 + descripción) con **hairline de apertura**; se eliminó el
->   patrón 7/5 del header de Experiences.
-> - **Eyebrow con acento `earth`** (tierra / caminos rurales, propio de "lugares"); "Los Saltos"
->   conserva su acento `water` en el CTA.
-> - **Protagonista panorámica** ("La Selva", `featured`): imagen full-width `aspect-[16/9]` mobile
->   → `21/9` desktop, overlay editorial con degradado `deep-earth`, badge "Destacado", nombre,
->   descripción `line-clamp-2` y Button "Descubrir".
-> - **Dúo editorial escalonado** ("Los Saltos" + "El Camino Rural") en vez de cards apiladas:
->   anchos asimétricos (`col-span-5` + `col-span-7`) con desplazamiento vertical del segundo
->   (`lg:mt-16`).
-> - **Sin numeración 01/02/03 ni barras de acento superiores** (firma visual de Experiences).
-> - **Descripciones reducidas visualmente** con `line-clamp` (1 línea en secundarias, 2 en la
->   protagonista); el texto permanece en el DOM (no se inventa ni modifica contenido).
-> - `loading="lazy"` + `decoding="async"` en todas las imágenes.
->
-> > **NOTA (plan B — crop de "Los Saltos"):** el formato **retrato `3/4`** propuesto originalmente
-> > NO se aplicó porque no pudo verificarse visualmente que el recorte lateral no cortara elementos
-> > importantes de la foto (fuente 3:2). Se priorizó la calidad de la imagen y se usó el plan B:
-> > "Los Saltos" en **paisaje `4/3`** (col-span-5) y "El Camino Rural" en **paisaje `16/10`**
-> > (col-span-7, desplazado). La asimetría de anchos y el offset conservan el ritmo editorial.
+> - **Concepto:** "Explorá Misiones" — mapa conceptual + panel sincronizado. **Eldorado es la base**
+>   (marcador tipo hogar, estado inicial seleccionado); el visitante explora los destinos sin
+>   abandonar la página. CTA **"Consultar"** → `#pre-reserva`.
+> - **Destinos (del PDF):** únicamente **Eldorado**, **Andresito**, **San Pedro** y
+>   **Saltos y Cascadas**. Actividades, modalidades (Full Day / Full Day o 2 días 1 noche) y
+>   descripciones textuales del PDF, sin contenido inventado.
+> - **Mapa REAL del propietario:** asset `src/assets/MAPA/mapa.jpg` (433×850, color) activado vía
+>   `misionesMap` (`source: 'asset'`) en `src/data/destinations.ts`; el contenedor usa el **mismo
+>   ratio** (`aspect-[433/850]`) para no deformar ni recortar la imagen. Los marcadores se posicionan
+>   con `map.real` (píxeles del asset) derivados de la silueta de la provincia + geografía real de
+>   cada destino — **PENDIENTE verificación visual del propietario** (posiciones ajustables en
+>   `destinations.ts`). `TerritorySvg` (mapa conceptual) queda como fallback de respaldo.
+> - **Interacción:** marcadores = `<button>` reales (`aria-pressed`, foco visible, labels
+>   accesibles); ruta punteada Eldorado → destino seleccionado (Framer Motion, respeta
+>   `prefers-reduced-motion`); panel con `aria-live="polite"`. En mobile: pills horizontales
+>   táctiles (≥44px, scroll horizontal) + mapa + panel; seleccionar un pill hace scroll suave al
+>   contenido del destino.
+> - **Fotografías:** por decisión del propietario **el panel NO muestra fotos por ahora** (foco en
+>   mapa + destino + actividades). Se eliminaron las reutilizaciones de la sección anterior
+>   (`cascada.jpg`, `caminorural.jpg`, `hero2.jpg`). Las fotos dedicadas por destino se incorporarán
+>   cuando el propietario las provea.
+> - **Distancia/tiempo desde Eldorado:** el PDF no los documenta → `distanceFromEldoradoKm` y
+>   `travelTimeFromEldoradoMin` en **`null` (TBD)**; el panel muestra **"A confirmar"**. No se
+>   estiman valores.
+> - **Self Drive Safari:** propuesta **transversal** del PDF (NO es un destino) → franja editorial
+>   discreta al pie de la sección con el texto exacto del PDF.
+> - **Iconografía:** Lucide provisional (iconos por actividad y por marcador de destino); se
+>   reemplazará por la iconografía oficial `ICONOS/` cuando se confirme el mapeo archivo → actividad.
 
-> **Actualización de contenido (fotos reales incorporadas):** "Los Saltos" y "El Camino Rural"
-> dejaron de reutilizar la serie `HERO/` y usan **fotos reales del propietario** provistas en
-> `src/assets/NOSOTROS/` (`cascada.jpg` → Los Saltos, `caminorural.jpg` → El Camino Rural).
-> "La Selva" (protagonista) conserva `hero2.jpg` de la serie `HERO/` hasta que el propietario
-> provea una foto dedicada. No se modificaron nombres, textos ni CTAs.
-
-> **Actualización de pulido mobile (sin cambios de contenido ni assets):** composición mobile de la
-> protagonista "La Selva" ajustada para dar más protagonismo a la fotografía y quitar la sensación
-> de "card de catálogo": imagen vertical `aspect-[4/5]` (mobile) en vez de `4/3`; badge "Destacado"
-> **superpuesto sobre la imagen** (top-left, más chico) en vez de en el bloque de texto; título en
-> `text-h2` (misma jerarquía que desktop); descripción con `mt-4` y contenido con `mt-6`. En
-> secondary cards se redujo el gap `gap-12 → gap-10`. Desktop **sin cambios** (panorámica `21/9`
-> con overlay, todos los valores restaurados con `lg:`/`sm:`).
+> **PENDIENTES de esta sección:**
+> - Distancias reales y tiempos de viaje desde Eldorado (confirmar con el propietario).
+> - Verificación visual de las posiciones de los marcadores sobre `mapa.jpg` (`map.real` en `src/data/destinations.ts`).
+> - Fotografías dedicadas por destino.
+> - Mapeo `ICONOS/` → actividad (iconos Lucide provisionales).
+> - Confirmación de que la oferta del PDF sigue vigente.
 
 ### Nosotros (`#nosotros`)
 

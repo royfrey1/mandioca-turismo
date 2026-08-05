@@ -16,7 +16,7 @@ import imgAvistaje from '../assets/EXPERIENCIAS/avistaje.jpg'
 export type ActivityId =
   | 'senderismo'
   | 'kayakismo'
-  | 'ciclismo'
+  | 'cicloturismo'
   | 'gastronomia'
   | 'turismo-rural'
   | 'campamentos'
@@ -80,8 +80,8 @@ export const experiences: Experience[] = [
   {
     id: 'ciclismo-rural',
     name: 'Bicicleteada por caminos rurales',
-    activity: 'Ciclismo',
-    activityId: 'ciclismo',
+    activity: 'Cicloturismo',
+    activityId: 'cicloturismo',
     accent: 'water',
     description:
       'Salida en bicicleta por caminos rurales y senderos de la zona, ideal para conectar con la naturaleza.',

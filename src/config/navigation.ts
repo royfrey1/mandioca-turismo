@@ -5,7 +5,7 @@ export type NavLink = {
 
 export const navLinks: NavLink[] = [
   { label: 'Experiencias', href: '#experiencias' },
-  { label: 'Destinos', href: '#destinos' },
+  { label: 'Explorá Misiones', href: '#destinos' },
   { label: 'Nosotros', href: '#nosotros' },
   { label: 'Galería', href: '#galeria' },
   { label: 'Testimonios', href: '#testimonios' },
