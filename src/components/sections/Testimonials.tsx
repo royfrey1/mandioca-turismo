@@ -3,6 +3,7 @@ import { Quote, Star } from 'lucide-react'
 import { Container } from '../layout/Container'
 import { testimonials, testimonialsSection } from '../../data/testimonials'
 import type { Testimonial } from '../../data/testimonials'
+import { trackEvent } from '../../lib/analytics'
 import rioBackground from '../../assets/GALERIA/nosotros.png'
 
 // Testimonios sobre fotografía real de Mandioca (rio2.jpg, río panorámico).
@@ -201,6 +202,9 @@ export function Testimonials() {
               href={testimonialsSection.reviewsUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() =>
+                trackEvent('click_google_reviews', { link_location: 'testimonials' })
+              }
               className="group mt-9 inline-flex items-center gap-2.5 rounded-full border border-warm-white/30 px-7 py-3.5 text-sm font-semibold text-primary transition-colors duration-300 hover:border-primary hover:bg-primary hover:text-deep-earth focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
             >
               {testimonialsSection.cta}

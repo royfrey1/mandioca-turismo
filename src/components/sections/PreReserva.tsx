@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
 import { Info, Send } from 'lucide-react'
 import { cn } from '../../lib/cn'
+import { trackEvent } from '../../lib/analytics'
 import { Section } from '../layout/Section'
 import { Container } from '../layout/Container'
 import { buildWhatsAppLink } from '../../lib/whatsapp'
@@ -139,6 +140,8 @@ export function PreReserva() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     if (!validate()) return
+
+    trackEvent('click_pre_reservar', { link_location: 'section' })
 
     setSending(true)
     const message = buildMessage()

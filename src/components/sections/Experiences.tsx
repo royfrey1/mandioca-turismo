@@ -4,6 +4,7 @@ import { Section } from '../layout/Section'
 import { Container } from '../layout/Container'
 import { Button } from '../ui/Button'
 import { experiences, experiencesSection } from '../../data/services'
+import { trackEvent } from '../../lib/analytics'
 import type { Experience, ExperienceAccent } from '../../data/services'
 
 // Acento de marca por card (tokens del Design System). Un solo color por card,
@@ -111,7 +112,17 @@ function ExperienceCard({
         </ul>
 
         <div className="mt-auto pt-6">
-          <Button href={experience.cta.href} fullWidth className="group/cta" size="md">
+          <Button
+            href={experience.cta.href}
+            fullWidth
+            className="group/cta"
+            size="md"
+            onClick={() =>
+              trackEvent('click_experiencia', {
+                experience_name: experience.name,
+              })
+            }
+          >
             {experience.cta.label}
             <span className="transition-transform duration-200 group-hover/cta:translate-x-1">
               <ArrowRight className="h-4 w-4" aria-hidden="true" />

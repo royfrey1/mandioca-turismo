@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { cn } from '../../lib/cn'
 import { navLinks, ctaLink } from '../../config/navigation'
+import { trackEvent } from '../../lib/analytics'
 import { Container } from './Container'
 import { Logo } from './Logo'
 import { Button } from '../ui/Button'
@@ -45,6 +46,12 @@ export function Navbar() {
 
   const closeMenu = () => setMenuOpen(false)
 
+  const trackExplorableLink = (label: string) => {
+    if (label === 'Explorá Misiones') {
+      trackEvent('click_explora_misiones', { link_location: 'navbar' })
+    }
+  }
+
   return (
     <header
       className={cn(
@@ -69,10 +76,11 @@ export function Navbar() {
           className="hidden items-center gap-8 lg:flex"
         >
           {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className={cn(
+<a
+                key={link.href}
+                href={link.href}
+                onClick={() => trackExplorableLink(link.label)}
+                className={cn(
                 'relative text-sm font-medium transition-colors duration-200',
                 'after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-primary after:transition-[width] after:duration-200',
                 'hover:after:w-full',
@@ -87,7 +95,12 @@ export function Navbar() {
         </nav>
 
         <div className="hidden lg:block">
-          <Button href={ctaLink.href}>{ctaLink.label}</Button>
+          <Button
+            href={ctaLink.href}
+            onClick={() => trackEvent('click_pre_reservar', { link_location: 'navbar' })}
+          >
+            {ctaLink.label}
+          </Button>
         </div>
 
         <button
@@ -131,7 +144,10 @@ export function Navbar() {
                   <a
                     ref={index === 0 ? firstLinkRef : undefined}
                     href={link.href}
-                    onClick={closeMenu}
+                    onClick={() => {
+                      closeMenu()
+                      trackExplorableLink(link.label)
+                    }}
                     className="block rounded-lg py-3 text-lg font-medium text-deep-earth transition-colors duration-200 hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                   >
                     {link.label}
@@ -144,7 +160,10 @@ export function Navbar() {
                 href={ctaLink.href}
                 size="lg"
                 fullWidth
-                onClick={closeMenu}
+                onClick={() => {
+                  closeMenu()
+                  trackEvent('click_pre_reservar', { link_location: 'navbar' })
+                }}
               >
                 {ctaLink.label}
               </Button>

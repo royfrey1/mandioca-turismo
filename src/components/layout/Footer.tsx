@@ -8,6 +8,7 @@ import { navLinks } from '../../config/navigation'
 import { businessConfig } from '../../config/business'
 import { footerContent } from '../../data/footer'
 import { buildWhatsAppLink } from '../../lib/whatsapp'
+import { trackEvent } from '../../lib/analytics'
 
 type ContactItem = {
   icon: ReactNode
@@ -116,6 +117,16 @@ export function Footer() {
                       {...(item.external
                         ? { target: '_blank', rel: 'noreferrer noopener' }
                         : {})}
+                      onClick={() => {
+                        if (!item.href) return
+                        if (item.href.startsWith('https://wa.me')) {
+                          trackEvent('click_whatsapp', { link_location: 'footer' })
+                        } else if (item.href.startsWith('tel:')) {
+                          trackEvent('click_phone', { link_location: 'footer' })
+                        } else if (item.href.startsWith('mailto:')) {
+                          trackEvent('click_email', { link_location: 'footer' })
+                        }
+                      }}
                       className="group flex items-center gap-3 text-sm text-warm-white/80 transition-colors duration-200 hover:text-primary"
                     >
                       <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-warm-white/10 text-warm-white/80 transition-colors duration-200 group-hover:bg-primary/20 group-hover:text-primary">

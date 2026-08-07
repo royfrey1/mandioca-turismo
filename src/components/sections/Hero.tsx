@@ -4,6 +4,7 @@ import { Container } from '../layout/Container'
 import { Button } from '../ui/Button'
 import { heroContent, heroSlides } from '../../data/hero'
 import { businessConfig } from '../../config/business'
+import { trackEvent } from '../../lib/analytics'
 import { useHeroCarousel } from '../../hooks/useHeroCarousel'
 
 const AUTOPLAY_MS = 6000
@@ -115,7 +116,14 @@ export function Hero() {
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
             <div className="w-full sm:w-auto">
-              <Button href={heroContent.primaryCta.href} size="lg" fullWidth>
+              <Button
+                href={heroContent.primaryCta.href}
+                size="lg"
+                fullWidth
+                onClick={() =>
+                  trackEvent('click_pre_reservar', { link_location: 'hero' })
+                }
+              >
                 {heroContent.primaryCta.label}
               </Button>
             </div>

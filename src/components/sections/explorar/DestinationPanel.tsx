@@ -19,6 +19,7 @@ import { cn } from '../../../lib/cn'
 import { Button } from '../../ui/Button'
 import { explorarSection } from '../../../data/destinations'
 import type { ActivityIcon, Destination, DestinationAccent } from '../../../data/destinations'
+import { trackEvent } from '../../../lib/analytics'
 
 // Iconografía de actividades (Lucide provisional; se reemplaza por la iconografía
 // oficial de ICONOS/ cuando se confirme el mapeo archivo → actividad).
@@ -148,7 +149,13 @@ export function DestinationPanel({ destination }: DestinationPanelProps) {
           </div>
 
           <div className="mt-7">
-            <Button href="#pre-reserva" className="group/cta">
+            <Button
+              href="#pre-reserva"
+              className="group/cta"
+              onClick={() =>
+                trackEvent('click_pre_reservar', { link_location: 'section' })
+              }
+            >
               {explorarSection.ctaLabel}
               <span className="transition-transform duration-200 group-hover/cta:translate-x-1">
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />

@@ -1,6 +1,7 @@
 import { WhatsAppIcon } from '../ui/WhatsAppIcon'
 import { footerContent } from '../../data/footer'
 import { buildWhatsAppLink } from '../../lib/whatsapp'
+import { trackEvent } from '../../lib/analytics'
 
 // Botón WhatsApp flotante (DESING_SYSTEM.md §9): visible, discreto, accesible y
 // fijo, sin tapar CTA ni contenido importante. Solo se renderiza cuando
@@ -17,6 +18,7 @@ export function WhatsAppButton() {
       rel="noreferrer noopener"
       aria-label="Escribinos por WhatsApp"
       title="Escribinos por WhatsApp"
+      onClick={() => trackEvent('click_whatsapp', { link_location: 'floating_button' })}
       className="fixed bottom-5 right-5 z-40 inline-flex h-14 w-14 items-center justify-center rounded-full bg-whatsapp text-white shadow-soft transition-transform duration-200 hover:scale-105 md:bottom-6 md:right-6"
     >
       <WhatsAppIcon className="h-7 w-7" />
